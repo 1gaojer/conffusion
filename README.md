@@ -50,6 +50,8 @@ The key question is:
 - `docs/model-outputs/`: repo-local copies of the raw GPT-Pro and Deep
   Research markdown outputs.
 - `notes/model-report-synthesis.md`: synthesis of the three model reports.
+- `notes/dataset-copies.md`: Ragon paths and provenance for Jerry-owned copied
+  conformer datasets.
 - `notes/`: scratch notes that are not yet evidence.
 
 ## Current Position

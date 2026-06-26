@@ -184,6 +184,8 @@ Use immediately:
 
 - Strict 300 target TSV as the primary target metadata table.
 - Strict 300 JSON as the generation-ready sequence input.
+- Jerry-owned pilot and medium copies of Gaeun's existing PH/AF3 ensemble
+  outputs, documented in `notes/dataset-copies.md`.
 - Existing 300 single-structure/Protein Hunter output folders as a
   single-conformer baseline and plumbing test.
 - Gaeun's read-only SAbDab-like ensemble outputs for ensemble-count,
