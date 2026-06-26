@@ -2,14 +2,17 @@
 
 This file records how the three model outputs should be treated as sources.
 
-## Attached Model Outputs
+## Copied Model Outputs
+
+The raw outputs have been copied into this repository so they are not dependent
+on transient Codex attachment paths.
 
 ### Deep Research Output Without Presentation Context
 
 Path:
 
 ```text
-/Users/jerrygao/.codex/attachments/847133ef-c497-48cf-b76f-248f469a024e/deep-research-report (without gaeun's presentation context).md
+docs/model-outputs/deep-research-without-presentation-context.md
 ```
 
 Assessment:
@@ -32,7 +35,7 @@ Best-use claims:
 Path:
 
 ```text
-/Users/jerrygao/.codex/attachments/847133ef-c497-48cf-b76f-248f469a024e/gpt-pro (with presentation context).md
+docs/model-outputs/gpt-pro-with-presentation-context.md
 ```
 
 Assessment:
@@ -58,7 +61,7 @@ Important caveat:
 Path:
 
 ```text
-/Users/jerrygao/.codex/attachments/847133ef-c497-48cf-b76f-248f469a024e/gpt-pro (without presentation context).md.md
+docs/model-outputs/gpt-pro-without-presentation-context.md
 ```
 
 Assessment:

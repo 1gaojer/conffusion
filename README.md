@@ -45,6 +45,8 @@ The key question is:
   committing.
 - `docs/references.md`: papers, methods, and source links.
 - `docs/source-notes.md`: notes on the GPT-Pro and Deep Research outputs.
+- `docs/model-outputs/`: repo-local copies of the raw GPT-Pro and Deep
+  Research markdown outputs.
 - `notes/model-report-synthesis.md`: synthesis of the three model reports.
 - `notes/`: scratch notes that are not yet evidence.
 

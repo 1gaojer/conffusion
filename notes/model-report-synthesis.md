@@ -5,9 +5,9 @@ provided while exploring the conffusion idea.
 
 ## Reports Reviewed
 
-- `deep-research-report (without gaeun's presentation context).md`
-- `gpt-pro (with presentation context).md`
-- `gpt-pro (without presentation context).md.md`
+- `docs/model-outputs/deep-research-without-presentation-context.md`
+- `docs/model-outputs/gpt-pro-with-presentation-context.md`
+- `docs/model-outputs/gpt-pro-without-presentation-context.md`
 
 The presentation-aware report was the most project-specific because it noticed
 details about the PH/AF3 hierarchy, ConFormer pooling, possible contact or
