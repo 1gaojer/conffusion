@@ -35,6 +35,28 @@ Gate:
 
 Goal: test the premise before optimizing.
 
+This phase is Aim 1 in operational form. Keep it organized around three
+questions:
+
+1. What is the fair benchmark?
+2. Does the full ensemble beat simple controls?
+3. Does any structural diversity translate into useful representation or
+   retrieval signal?
+
+### 1. Build A Fair Test
+
+Tasks:
+
+- Define the benchmark unit as one antibody/BCR target with sequence,
+  conformers, and downstream label or retrieval target.
+- Freeze the benchmark set and endpoint before comparing methods.
+- Use leakage-safe splits, preferably target-level plus at least one stricter
+  family-level split.
+- Confirm that conformers from the same antibody target do not appear on both
+  sides of train/test.
+
+### 2. Compare Full Ensemble Against Simple Controls
+
 Experiments:
 
 - Full ensemble versus one conformer.
@@ -45,17 +67,23 @@ Experiments:
 - Full ensemble versus random coordinate perturbations.
 - Optional: PH/AF3 versus ABB4-STEROIDS or another antibody ensemble baseline.
 
+### 3. Judge By Useful Outputs
+
 Metrics:
 
-- downstream retrieval metrics;
+- structural diversity and geometry validity;
+- CDR-H3, all-CDR, and VH/VL orientation coverage;
 - ConFormer output stability;
 - embedding mean and covariance preservation;
-- structural coverage;
-- geometry validity.
+- downstream retrieval metrics such as Hit@K and MRR;
+- disease-panel ranking or macro-F1 when classification is used;
+- ranking-bias diagnostics, especially whether the same antigen groups dominate
+  many unrelated queries.
 
 Deliverable:
 
-- premise report: does ensemble variability improve the chosen endpoint?
+- premise report: does ensemble variability improve the chosen endpoint, and
+  under which split/control conditions?
 
 Go/no-go:
 

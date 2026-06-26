@@ -35,7 +35,24 @@ downstream antigen-retrieval performance at much lower compute cost.
 ## Aim 1: Test Whether Full Conformer Ensembles Add Useful Signal
 
 The first aim is to establish whether conformer ensembles provide measurable
-benefit over simpler alternatives. For each antibody target, compare:
+benefit over simpler alternatives. This aim should be treated as a benchmark
+and sanity-check phase, not as a generative-modeling phase. It has three parts.
+
+### Phase 1: Build A Fair Test
+
+Define the benchmark unit as one antibody/BCR target with heavy/light sequence,
+generated conformers, and a downstream target such as an antigen group, disease
+panel, or retrieval label. Freeze the benchmark set, endpoint, and train/test
+split before comparing methods.
+
+Splits must be target-level or family-level. No conformers from the same
+antibody target, or close antibody family when family information is available,
+should appear on both sides of train/test. This phase answers: what exactly is
+being tested, and how is leakage being prevented?
+
+### Phase 2: Compare The Full Ensemble Against Simple Controls
+
+For each antibody target, compare:
 
 - full PH/AF3 ensemble;
 - sequence-only baseline;
@@ -45,10 +62,27 @@ benefit over simpler alternatives. For each antibody target, compare:
 - simple random coordinate perturbations;
 - reduced PH/AF3 branches where available.
 
-Evaluation should include structural diversity metrics, ConFormer embedding
-preservation, and downstream nearest-neighbor antigen retrieval or disease-panel
-ranking. Splits must be target-level or family-level. No conformers from the
-same antibody target should appear on both sides of train/test.
+This phase answers whether the expensive full ensemble is better than cheap or
+deliberately naive alternatives. The repeated-single-conformer and random-
+perturbation controls are especially important because they test whether the
+downstream model is using real conformational diversity rather than merely
+benefiting from multiple structure-like inputs.
+
+### Phase 3: Judge By Useful Outputs
+
+Evaluation should include three classes of readout:
+
+- structural diversity: CDR-H3 diversity, all-CDR diversity, VH/VL orientation
+  diversity, and cluster coverage;
+- representation behavior: ConFormer embedding preservation, embedding
+  stability, and whether ensemble information changes the representation in a
+  consistent way;
+- downstream performance: nearest-neighbor antigen retrieval, disease-panel
+  ranking, Hit@K, MRR, macro-F1 when classification is used, and ranking-bias
+  diagnostics.
+
+Structural diversity alone is not sufficient. The full ensemble is useful only
+if conformational diversity translates into representation or retrieval signal.
 
 Expected outcome: This aim determines whether conformational variability is
 actually being used by the downstream model. If the full ensemble does not beat
