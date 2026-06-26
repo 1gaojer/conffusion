@@ -34,21 +34,21 @@ duplicates under project folders.
 
 Conffusion-relevant PDFs:
 
-- `/Users/jerrygao/Research/papers/ABodyBuilder4-STEROIDS.pdf`
-- `/Users/jerrygao/Research/papers/ALL-conformations ITsFlexible.pdf`
-- `/Users/jerrygao/Research/papers/AbDiffuser Full-atom antibody diffusion design.pdf`
-- `/Users/jerrygao/Research/papers/AlphaFlow-Lit Efficient AlphaFlow-style ensemble generation..pdf`
-- `/Users/jerrygao/Research/papers/AlphaFlow.pdf`
-- `/Users/jerrygao/Research/papers/BioEmu.pdf`
-- `/Users/jerrygao/Research/papers/DiffAb Antigen-specific antibody CDR sequencestructure diffusion.pdf`
-- `/Users/jerrygao/Research/papers/FlowAB.pdf`
-- `/Users/jerrygao/Research/papers/FrameDiff SE(3) residue-frame diffusion.pdf`
-- `/Users/jerrygao/Research/papers/IgDiff Antibody variable-domain diffusion.pdf`
-- `/Users/jerrygao/Research/papers/Large-scale predictions of alternative protein conformations by AlphaFold2-based sequence association.pdf`
-- `/Users/jerrygao/Research/papers/Protein Hunter.pdf`
-- `/Users/jerrygao/Research/papers/RFantibody.pdf`
-- `/Users/jerrygao/Research/papers/RFdiffusion.pdf`
-- `/Users/jerrygao/Research/papers/Structure prediction of alternative protein conformations.pdf`
+- `/Users/jerrygao/Research/papers/2026-ABodyBuilder4-STEROIDS-Sampling-Antibody-Conformational-Ensembles.pdf`
+- `/Users/jerrygao/Research/papers/2025-ITsFlexible-Antibody-TCR-CDR-Conformational-Flexibility.pdf`
+- `/Users/jerrygao/Research/papers/2023-AbDiffuser-Full-Atom-In-Vitro-Functioning-Antibodies.pdf`
+- `/Users/jerrygao/Research/papers/2024-AlphaFlow-Lit-Efficient-Protein-Ensemble-Generation.pdf`
+- `/Users/jerrygao/Research/papers/2024-AlphaFlow-Flow-Matching-Protein-Ensembles.pdf`
+- `/Users/jerrygao/Research/papers/2025-BioEmu-Protein-Equilibrium-Ensembles.pdf`
+- `/Users/jerrygao/Research/papers/2022-DiffAb-Antigen-Specific-Antibody-Design-Diffusion.pdf`
+- `/Users/jerrygao/Research/papers/2024-FlowAB-Energy-Guided-SE3-Flow-Matching-Antibody-Refinement.pdf`
+- `/Users/jerrygao/Research/papers/2023-FrameDiff-SE3-Diffusion-Protein-Backbone-Generation.pdf`
+- `/Users/jerrygao/Research/papers/2024-IgDiff-De-Novo-Antibody-Design-SE3-Diffusion.pdf`
+- `/Users/jerrygao/Research/papers/2025-CF-Random-AF2-Sequence-Association-Alternative-Conformations.pdf`
+- `/Users/jerrygao/Research/papers/2025-Protein-Hunter-Structure-Hallucination-Diffusion-Protein-Design.pdf`
+- `/Users/jerrygao/Research/papers/2025-RFantibody-De-Novo-Antibody-Design-RFdiffusion.pdf`
+- `/Users/jerrygao/Research/papers/2023-RFdiffusion-De-Novo-Protein-Structure-Function-Design.pdf`
+- `/Users/jerrygao/Research/papers/2024-Cfold-Alternative-Protein-Conformation-Prediction.pdf`
 
 ## Protein Structure Generative Models
 
