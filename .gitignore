@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Python / notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Generated analysis outputs
+outputs/
+artifacts/
+scratch/
+tmp/
+
+# Large structural/data files should be referenced by manifest, not committed.
+*.pdb
+*.cif
+*.bcif
+*.pkl
+*.pt
+*.pth
+*.npz
+*.npy
+*.parquet
