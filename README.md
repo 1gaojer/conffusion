@@ -52,6 +52,10 @@ The key question is:
 - `notes/model-report-synthesis.md`: synthesis of the three model reports.
 - `notes/dataset-copies.md`: Ragon paths and provenance for Jerry-owned copied
   conformer datasets.
+- `notes/aim1-phase1-medium-results.md`: first CPU-only structural saturation
+  run on the medium copied PH/AF3 dataset.
+- `scripts/aim1_phase1_structural.py`: reproducible CPU-only parser,
+  pairwise-RMSD, and saturation analysis script.
 - `notes/`: scratch notes that are not yet evidence.
 
 ## Current Position
