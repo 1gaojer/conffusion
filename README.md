@@ -38,6 +38,8 @@ The key question is:
 - `docs/proposal.md`: thesis-style proposal with hypothesis and aims.
 - `docs/background.md`: scientific context and rationale.
 - `docs/research-plan.md`: staged plan, gates, and deliverables.
+- `docs/aim1-phase1-benchmark-plan.md`: concrete data inventory and build plan
+  for the first Aim 1 benchmark.
 - `docs/evaluation.md`: baselines, metrics, controls, and failure modes.
 - `docs/implementation-notes.md`: manifest fields, data handling, and future
   implementation notes.
