@@ -21,6 +21,35 @@ before making present-tense claims.
 - Jerry-owned cluster conformer pipeline copy:
   `/project/liulab/jg1920/bcr-conformer-pipeline`
 
+## Canonical Local PDFs
+
+PDFs are stored once in the shared Research paper library:
+
+```text
+/Users/jerrygao/Research/papers/
+```
+
+Project-specific docs should link to these canonical copies rather than storing
+duplicates under project folders.
+
+Conffusion-relevant PDFs:
+
+- `/Users/jerrygao/Research/papers/ABodyBuilder4-STEROIDS.pdf`
+- `/Users/jerrygao/Research/papers/ALL-conformations ITsFlexible.pdf`
+- `/Users/jerrygao/Research/papers/AbDiffuser Full-atom antibody diffusion design.pdf`
+- `/Users/jerrygao/Research/papers/AlphaFlow-Lit Efficient AlphaFlow-style ensemble generation..pdf`
+- `/Users/jerrygao/Research/papers/AlphaFlow.pdf`
+- `/Users/jerrygao/Research/papers/BioEmu.pdf`
+- `/Users/jerrygao/Research/papers/DiffAb Antigen-specific antibody CDR sequencestructure diffusion.pdf`
+- `/Users/jerrygao/Research/papers/FlowAB.pdf`
+- `/Users/jerrygao/Research/papers/FrameDiff SE(3) residue-frame diffusion.pdf`
+- `/Users/jerrygao/Research/papers/IgDiff Antibody variable-domain diffusion.pdf`
+- `/Users/jerrygao/Research/papers/Large-scale predictions of alternative protein conformations by AlphaFold2-based sequence association.pdf`
+- `/Users/jerrygao/Research/papers/Protein Hunter.pdf`
+- `/Users/jerrygao/Research/papers/RFantibody.pdf`
+- `/Users/jerrygao/Research/papers/RFdiffusion.pdf`
+- `/Users/jerrygao/Research/papers/Structure prediction of alternative protein conformations.pdf`
+
 ## Protein Structure Generative Models
 
 ### RFdiffusion
