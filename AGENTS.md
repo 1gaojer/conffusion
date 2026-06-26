@@ -1,40 +1,39 @@
 # Conffusion Agent Instructions
 
-This repository is Jerry-owned planning and analysis space for a possible
-thesis project on efficient antibody conformer ensembles.
+This repo is a Jerry-owned planning workspace for a possible thesis project on
+efficient antibody conformer ensemble modeling.
 
-## Scientific Posture
+## Operating Rules
 
-- Treat Gaeun's PH/AF3 conformers as pseudo-bound computational proposal
-  ensembles, not physical equilibrium ensembles.
-- Separate observed facts, hypotheses, speculation, and recommendations.
-- Do not overclaim antigen specificity, antibody dynamics, or physical
-  occupancy probabilities.
-- Prefer strong non-neural baselines before proposing new generative models.
-- Keep the core project useful even if diffusion or flow models underperform.
-
-## Ownership And Safety
-
-- Gaeun-owned and shared lab paths are read-only by default.
+- Keep the project grounded in Gaeun's conformer-generation optimization need.
+- Treat Gaeun-owned code, data, outputs, jobs, and shared lab assets as
+  read-only.
 - Do not edit, delete, move, relaunch, cancel, or otherwise control
   collaborator-owned files, outputs, jobs, or runs.
-- Future generated artifacts should go under Jerry-owned local or cluster
-  paths.
 - Do not store secrets, tokens, private keys, or broad credentials in this
   repo.
+- Separate observed evidence from interpretation, hypothesis, and speculation.
+- Do not claim that PH/AF3 conformers are physical equilibrium samples unless
+  external physical or experimental validation supports that claim.
+- Prefer small, controlled evaluations before model-building.
+- For present-tense pipeline claims, verify the live repo or run configuration.
+- For Python work in Liu Lab repos, use the shared configured lab environment
+  rather than creating repo-local virtual environments.
+
+## Scientific Guardrails
+
+- The core thesis should be ensemble compression, adaptive sampling, and
+  task-preserving distillation.
+- Generative modeling is a gated extension, not the first deliverable.
+- The first baseline to beat is smart subsampling, not diffusion.
+- Train/test splits must be target-level or family-level, never conformer-level.
+- Downstream antigen retrieval claims require leakage-aware baselines and hard
+  negatives.
 
 ## Documentation Style
 
-- Use concise but evidence-backed technical writing.
-- Attach exact paths, manifests, versions, and assumptions when known.
-- Mark unresolved claims with "to verify" rather than smoothing them over.
-- Avoid "dynamics", "Boltzmann", "free energy", or "equilibrium" language
-  unless external physical validation supports it.
-
-## Future Code
-
-- If this repo gains Python code, use the shared Liu Lab environment specified
-  by the parent Research workspace instructions when dependencies matter.
-- Add scripts only after the data contracts and read-only/write boundaries are
-  explicit.
-- Keep analysis reproducible through manifests, not ad hoc path scanning.
+- Keep docs concise but specific.
+- Record exact paths, run IDs, manifests, and versions when they become known.
+- Label unverified claims from model reports or presentations as "reported" or
+  "to verify".
+- Keep papers and source links in `docs/references.md`.

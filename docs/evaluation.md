@@ -1,176 +1,201 @@
-# Evaluation Design
+# Evaluation Framework
 
-## Evaluation Principles
+## Primary Principle
 
-1. Split by target before sampling conformers.
-2. Treat conformer files from the same antibody as correlated.
-3. Report structural quality, structural coverage, representation preservation,
-   downstream performance, and compute cost separately.
-4. Define non-inferiority margins before looking at final results.
-5. Keep teacher fidelity separate from biological fidelity.
+The project should evaluate whether a smaller conformer set preserves useful
+information, not whether it produces visually diverse structures.
+
+Every result should be reported with:
+
+- target-level or family-level splits;
+- repeated subset trials;
+- target-level confidence intervals;
+- a predefined non-inferiority margin;
+- compute and storage accounting.
 
 ## Baselines
 
-Minimum baselines:
+### Minimal Baselines
 
-- full PH/AF3 teacher ensemble;
-- single static or predicted antibody structure;
-- repeated copies of one conformer;
-- random subsets of size K;
-- stratified subsets of size K by PH design/cycle/AF3 seed;
-- quality-score-only selection;
-- k-medoids or k-center selection;
-- reduced PH design/cycle protocols;
-- reduced-seed AF3 without full PH;
 - sequence-only model;
-- sequence plus one structure;
-- shuffled-conformer negative controls;
-- fast antibody ensemble model, if deployable, such as ABodyBuilder4-STEROIDS.
+- one static or predicted structure;
+- one conformer repeated N times;
+- full PH/AF3 teacher ensemble;
+- uniform random K-subsets;
+- stratified K-subsets.
 
-Optional baselines:
+### Structural Selection Baselines
 
-- BioEmu or AlphaFlow-style general protein ensemble sampling, if compatible
-  with antibody chain conventions;
-- representation distillation without explicit conformer generation;
-- random RMSD-matched perturbations around one anchor.
+- k-medoids;
+- k-center or farthest-point sampling;
+- cluster medoids;
+- facility-location objective;
+- determinantal point process;
+- kernel herding;
+- ConFormer moment matching.
+
+### Generation Baselines
+
+- reduced AF3-only;
+- reduced PH/AF3 settings;
+- one AF3 output per PH design;
+- ABB4-STEROIDS or another fast antibody ensemble model if feasible;
+- direct full-ensemble representation distillation.
 
 ## Structural Metrics
 
-Geometry and validity:
+Report coverage and precision separately.
+
+Coverage:
+
+- teacher-to-subset nearest-neighbor distance;
+- teacher cluster recall;
+- maximum uncovered cluster radius;
+- CDR-H3 RMSD coverage;
+- all-CDR RMSD coverage;
+- VH/VL orientation coverage;
+- paratope surface-shape coverage.
+
+Precision:
+
+- subset-to-teacher nearest-neighbor distance;
+- generated-to-teacher distance;
+- generated-to-experimental distance where available;
+- fraction of generated samples near a valid teacher or external mode.
+
+Distributional metrics:
+
+- pairwise RMSD distribution;
+- per-residue RMSF;
+- torsion distributions;
+- pairwise-distance feature MMD or energy distance;
+- cluster-weight divergence only when weights are meaningful.
+
+## Geometry And Validity
+
+RMSD alone is insufficient. Measure:
 
 - chain breaks;
 - peptide bond geometry;
-- bond and angle outliers;
-- Ramachandran outliers;
+- bond-length and bond-angle deviations;
 - chirality;
-- cis/trans peptide sanity;
+- cis/trans peptide state;
+- Ramachandran outliers;
+- steric clashes;
 - CDR loop closure;
 - disulfide geometry;
-- steric clashes;
+- VH/VL interface clashes;
 - side-chain rotamer plausibility;
-- VH/VL interface plausibility.
+- confidence scores, with the caveat that they are teacher diagnostics.
 
-Diversity and coverage:
-
-- framework-aligned CDR-H3 RMSD;
-- RMSD for all six CDRs;
-- CDR-H3 tip displacement;
-- per-residue RMSF;
-- backbone torsion distributions;
-- pairwise-distance feature diversity;
-- VH/VL orientation metrics;
-- cluster count and cluster recall;
-- teacher-to-subset nearest-neighbor distance;
-- subset-to-teacher nearest-neighbor distance;
-- maximum mean discrepancy or energy distance in structural feature space.
-
-Important warning: mean pairwise RMSD alone rewards broadness, including
-physically bad broadness. Always pair diversity with precision and validity.
+Any relaxation, repacking, or revalidation cost must be included in the compute
+budget.
 
 ## Representation Metrics
 
-Because ConFormer or MCA-style models are expected consumers, evaluate:
+Because ConFormer or MCA-style models are intended consumers, evaluate:
 
 - pooled embedding cosine distance;
 - mean embedding error;
 - covariance or pair-representation error;
 - per-residue embedding drift;
+- attention-map stability;
 - output-logit stability;
-- retrieval-score stability;
-- attention-map stability where available;
-- sensitivity to conformer order and conformer duplication.
+- calibration drift;
+- prediction stability under conformer order permutation;
+- prediction stability under conformer duplication.
 
-Useful controls:
-
-- randomly permute conformer order;
-- replace conformer 0 with different ensemble members;
-- duplicate one conformer 2x, 10x, and 100x;
-- hold unique modes fixed while changing multiplicities;
-- compare raw conformer-weighted mean to cluster-weighted mean.
-
-If predictions change when only order or multiplicity changes, some apparent
-ensemble-size effects may be architecture artifacts rather than structural
-information.
+If ConFormer embeddings are used for selection, do not use the same embedding
+preservation metric as the only success criterion. Include independent
+structural and downstream endpoints.
 
 ## Downstream Metrics
 
-For antigen retrieval:
+Preferred endpoint:
+
+- nearest-neighbor antigen retrieval over a defined antigen bank.
+
+Report:
 
 - Recall@1, Recall@5, Recall@10;
 - mean reciprocal rank;
 - mean average precision;
 - candidate-bank size;
-- macro-averaged performance across antigen groups;
-- hard-negative performance;
-- calibration and confidence;
-- target-family bootstrap confidence intervals.
+- hard-negative construction;
+- macro averages across antigen groups;
+- performance on unseen sequence families;
+- performance on unseen antigen families where possible.
 
-For disease-panel ranking:
+Additional endpoints:
 
-- AUROC and AUPRC;
-- macro-averaged metrics by disease;
-- patient/cohort split controls where applicable;
-- antigen-count and antigen-diversity diagnostics.
+- disease-panel ranking;
+- antigen-surface retrieval;
+- peptide affinity prediction;
+- paratope prediction;
+- frozen-model behavior preservation;
+- retrained-model behavior at each K.
 
-Closed-set antigen classification should be treated as a debugging or
-sanity-check task unless strict external splits and hard negatives are present.
-
-## Compute Metrics
-
-Report end-to-end cost:
-
-- PH calls;
-- AF3 input JSON count;
-- AF3 cofold count;
-- GPU-hours;
-- wall-clock time;
-- storage;
-- preprocessing time;
-- conformer filtering time;
-- downstream training and inference time;
-- student-model training cost;
-- student-model inference cost;
-- relaxation or validation cost.
-
-For learned students, report amortization:
-
-```text
-break_even_targets =
-    training_cost / (teacher_cost_per_target - student_cost_per_target)
-```
-
-A fast sampler is not useful if training and validation cost exceed the expected
-future savings.
+Closed-set antigen classification should be treated as a debugging or sanity
+endpoint unless the split and negative controls are strong.
 
 ## Leakage Controls
 
-Avoid leakage by grouping:
+Required:
 
-- all conformers from one antibody target;
-- identical paired VH/VL sequences;
-- near-identical VH/VL sequences;
-- same CDR-H3 sequence and length families;
-- clonal relatives where known;
-- repeated PDB entries or engineered variants;
-- antigen families for retrieval tasks where possible;
-- all variants of a shared generation protocol when testing deployment.
+- split by antibody target before conformer sampling;
+- group paired heavy/light sequence duplicates;
+- group near-identical CDR-H3s;
+- group clonal or engineered lineages when known;
+- group repeated PDB entries of the same antibody;
+- control antigen-family similarity for retrieval;
+- document overlap with model pretraining sources when possible.
 
-Project-specific concern:
+Privileged-conditioning controls:
 
-- If true antigen contacts, epitope residues, cognate-antigen size, or
-  complex-derived templates were used to generate conformers that are later
-  evaluated for antigen prediction, label that condition as privileged and keep
-  it separate from deployable sequence-only tests.
+- compare true-contact, predicted-contact, and random-contact conditioning;
+- standardize binder-size rules when testing deployment settings;
+- keep privileged teacher outputs as a separately labeled upper bound;
+- evaluate final claims using only deployable information.
 
-## Decision Matrix
+ConFormer-specific controls:
 
-| Observation | Interpretation | Next step |
-|---|---|---|
-| Full ensemble does not beat sequence/static controls | Ensemble premise weak or leakage/architecture issue | Do not build generator; diagnose |
-| Random small K works | Most conformers redundant | Use reduced fixed generation or random/stratified sampling |
-| Coreset works but random does not | Selection matters | Build learned selector or prototype predictor |
-| Prospective reduced PH/AF3 works | Compute can be cut directly | Prioritize adaptive generation |
-| PH/AF3 beats fast antibody ensemble baseline under blind conditioning | Pseudo-bound proposal may add useful modes | Consider distillation |
-| Fast antibody ensemble baseline matches PH/AF3 | Existing model may solve the practical problem | Pivot to benchmark/comparison or hybrid use |
-| Generator beats selection baselines | Generative model justified | Expand cautiously |
-| Generator loses to simple coreset | Generation not needed yet | Report negative result and use coreset |
+- permute conformer order;
+- replace conformer 0 with different ensemble members;
+- duplicate one conformer at 2x, 10x, and 100x;
+- hold unique modes fixed while changing multiplicity;
+- compare raw conformer-weighted means to cluster-weighted means.
+
+## Compute Metrics
+
+Report:
+
+- PH calls;
+- AF3 calls;
+- GPU-hours;
+- wall-clock time;
+- peak memory;
+- storage;
+- preprocessing and I/O time;
+- ConFormer training cost;
+- ConFormer inference cost;
+- student model training cost;
+- student model inference cost;
+- break-even number of future targets.
+
+Break-even:
+
+```text
+N_break_even = C_train / (C_teacher_per_target - C_student_per_target)
+```
+
+## Failure Modes
+
+- full ensemble does not beat sequence/static controls;
+- model learns PH/AF3 artifacts;
+- conformer-level leakage inflates performance;
+- diversity metrics reward broken structures;
+- rare useful modes are lost;
+- downstream endpoint is too weak or too easy;
+- compute savings disappear after relaxation or filtering;
+- generated ensembles are overclaimed as physical dynamics;
+- thesis scope moves while Gaeun's pipeline changes.

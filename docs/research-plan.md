@@ -1,177 +1,196 @@
 # Research Plan
 
-## Core Question
+## Phase 0: Freeze Scope And Evidence
 
-What is the minimal structural distribution needed by a conformer-aware
-antibody representation model, and can that distribution be obtained without
-thousands of AF3 cofolds per antibody?
+Goal: avoid a moving-target thesis.
 
-## Phase 0: Freeze Scope And Data Contracts
+Tasks:
 
-Before any modeling:
-
-- define the primary downstream endpoint;
-- freeze a dataset snapshot and split;
-- record the exact PH/AF3 pipeline version;
-- record all generation parameters;
-- define the unit of independence;
-- document what information is available at deployment.
-
-Important current version note: project notes and presentation-derived reports
-refer to a 25-design PH setup in some contexts, while the local Jerry-owned
-wrapper currently exposes defaults of 20 designs, 5 cycles, and 5 AF3 seeds.
-Treat design count and total cofold count as versioned parameters until the
-exact live Gaeun configuration is verified.
+- Choose the primary dataset snapshot.
+- Record the exact PH/AF3 pipeline version.
+- Record the exact generation parameters:
+  - PH design count;
+  - PH cycle count;
+  - AF3 seed count;
+  - AF3 model count;
+  - contact-conditioning rule;
+  - pseudo-binder size rule;
+  - filter criteria.
+- Build a target-level manifest with one row per conformer.
+- Freeze the primary downstream endpoint.
+- Freeze train/test splits before model development.
 
 Deliverable:
 
-- `manifest_targets.tsv` with one row per antibody target.
-- `manifest_conformers.tsv` with one row per conformer.
-- A short provenance report that records data sources, pipeline version, and
-  known leakage risks.
+- `manifest_schema.md` or equivalent data dictionary.
+- A short data audit report with target counts, conformer counts, failure modes,
+  and known caveats.
 
-## Phase 1: Redundancy And Signal Audit
+Gate:
 
-Goal: determine whether the conformer ensemble contains meaningful structure
-for the downstream model.
+- Do not start model development until the dataset snapshot, split, and endpoint
+  are documented.
 
-Analyses:
+## Phase 1: Does The Ensemble Matter?
 
-- count retained conformers per target;
-- cluster conformers after framework alignment;
-- quantify near-duplicates;
-- decompose variation by PH design, cycle, AF3 seed, and AF3 model;
-- measure CDR-H3, all-CDR, and VH/VL orientation variability;
-- test ConFormer order, duplicate, and multiplicity sensitivity;
-- compare full ensemble to sequence-only, static, repeated-single, and reduced
-  AF3 controls.
+Goal: test the premise before optimizing.
 
-Go/no-go criteria:
+Experiments:
 
-- Continue if the full ensemble shows reproducible benefit or has clear
-  nonredundant structural modes.
-- Pause if the full ensemble does not beat sequence-only or single-structure
-  baselines under strict splits.
+- Full ensemble versus one conformer.
+- Full ensemble versus repeated one conformer.
+- Full ensemble versus sequence-only.
+- Full ensemble versus one static or predicted structure.
+- Full ensemble versus reduced AF3-only outputs.
+- Full ensemble versus random coordinate perturbations.
+- Optional: PH/AF3 versus ABB4-STEROIDS or another antibody ensemble baseline.
 
-## Phase 2: Subsampling And Coreset Curves
+Metrics:
 
-Goal: estimate the smallest task-sufficient ensemble.
+- downstream retrieval metrics;
+- ConFormer output stability;
+- embedding mean and covariance preservation;
+- structural coverage;
+- geometry validity.
+
+Deliverable:
+
+- premise report: does ensemble variability improve the chosen endpoint?
+
+Go/no-go:
+
+- If the full ensemble does not help, pause generation work and diagnose model,
+  endpoint, and leakage.
+- If it helps, proceed to compression.
+
+## Phase 2: Saturation And Coreset Curves
+
+Goal: identify the smallest task-sufficient subset.
 
 Evaluate subset sizes:
 
 ```text
-1, 2, 4, 8, 16, 32, 64, 128, 256, 512, full
+K = 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, full
 ```
 
 Selection strategies:
 
-- random sampling;
-- stratified random sampling by PH branch and AF3 seed;
-- one conformer per PH design;
-- quality-score selection;
+- uniform random;
+- stratified by PH branch;
+- stratified by AF3 seed/model;
 - k-medoids;
-- farthest-point or k-center sampling;
-- facility-location selection;
-- determinantal point process selection;
-- embedding-moment matching;
-- cluster-weighted medoids.
-
-Deliverables:
-
-- performance-versus-K curves;
-- coverage-versus-K curves;
-- compute/storage-versus-K curves;
-- non-inferiority summary for candidate K values.
-
-Interpretation:
-
-- If random small K works, optimize fixed reduced generation.
-- If oracle or coreset small K works but random does not, build a learned
-  selector or prototype predictor.
-- If no small K works, the full ensemble may be necessary or the downstream
-  model may be sensitive to raw multiplicity rather than modes.
-
-## Phase 3: Prospective Compute Reduction
-
-Goal: reduce generation cost before the full archive exists.
-
-Test controlled protocols on untouched targets:
-
-- fewer PH designs;
-- fewer PH cycles;
-- fewer AF3 seeds;
-- fewer AF3 models per seed;
-- one AF3 model per PH design followed by selective expansion;
-- adaptive stopping based on structural coverage or embedding convergence.
-
-Potential stopping signals:
-
-- no new cluster in recent samples;
-- full-ensemble embedding mean/covariance estimate has stabilized;
-- downstream prediction has stabilized;
-- predicted unseen-mode mass is below threshold;
-- marginal cluster coverage per GPU-hour is too low.
+- k-center/farthest point;
+- cluster medoids;
+- facility-location objective;
+- ConFormer moment matching;
+- task-aware selection where appropriate.
 
 Deliverable:
 
-- a prospective reduced-generation protocol with measured GPU-hour, storage,
-  and downstream tradeoffs.
+- performance-versus-K curves;
+- performance-versus-cost curves;
+- recommended default K range.
 
-## Phase 4: Optional Generative Or Distillation Model
+Gate:
 
-Only proceed if Phases 1-3 show a meaningful target distribution and a useful
-small-K endpoint.
+- If random small K works, prioritize reduced pipeline settings and adaptive
+  stopping.
+- If oracle or learned coresets beat random, prioritize selection.
+- If no compact subset works, reconsider whether a small generator is realistic.
+
+## Phase 3: Prospective Cost Reduction
+
+Goal: reduce compute before full generation.
+
+Variance decomposition:
+
+- PH design;
+- PH cycle;
+- contact conditioning;
+- pseudo-binder size;
+- AF3 seed;
+- AF3 model;
+- filter outcome.
+
+Reduced protocols:
+
+- fewer PH designs;
+- fewer cycles;
+- fewer AF3 seeds;
+- fewer AF3 models;
+- one AF3 output per PH design before deeper allocation;
+- target-specific K;
+- branch-specific adaptive allocation.
+
+Stopping criteria:
+
+- no new structural cluster after recent samples;
+- embedding mean/covariance has stabilized;
+- estimated unseen-mode mass below threshold;
+- downstream prediction stable;
+- marginal coverage per GPU-hour below threshold.
+
+Deliverable:
+
+- prospective reduced-generation pilot.
+
+Gate:
+
+- Compression is not enough. At least one prospective experiment should show
+  that generation itself can be reduced or stopped early.
+
+## Phase 4: Optional Generative Distillation
+
+Goal: test whether a small model can amortize useful teacher modes.
+
+Only proceed after:
+
+- the full ensemble adds value;
+- a compact target distribution exists;
+- strong non-neural coresets are established;
+- privileged conditioning has been separated from blind conditioning.
 
 Candidate models:
 
-1. Set-of-prototypes transformer:
-   - encode paired VH/VL sequence and one anchor structure;
-   - use K learned query tokens;
-   - predict K CDR-frame medoids and optional weights;
-   - train with optimal-transport or Hungarian matching to teacher clusters.
+- set-of-prototypes transformer predicting K conformer medoids;
+- CDR-H3 frame or torsion residual flow;
+- all-CDR frame model around an anchor structure;
+- ABB4-STEROIDS initialized transport toward PH/AF3 pseudo-bound modes;
+- direct full-ensemble representation distillation.
 
-2. CDR-focused residual flow:
-   - condition on paired sequence, anchor structure, and CDR masks;
-   - generate residue frames or torsions for CDRs;
-   - optionally perturb VH/VL orientation;
-   - reconstruct side chains with a separate packer or leave side chains out
-     unless the downstream model needs them.
+Non-goals:
 
-3. Representation distillation:
-   - predict full-ensemble ConFormer representation from sequence plus a small
-     structure set;
-   - use when deployment does not require explicit PDB structures.
+- full all-atom generation from scratch;
+- claiming true equilibrium dynamics;
+- treating teacher frequency as physical occupancy.
 
-Preferred result:
+Deliverable:
 
-```text
-32-64 student samples recover most task-relevant structural support and
-downstream performance of a 1500+ conformer teacher ensemble at much lower
-marginal compute.
-```
+- small held-out proof of concept compared against random subsets, coresets,
+  reduced AF3, ABB4-STEROIDS, and the full PH/AF3 teacher.
 
-## 3-Month Milestone
+## Tentative Timeline
 
-- Frozen manifest and split.
-- Redundancy report on 50-100 diverse targets.
-- ConFormer sensitivity tests.
-- Initial K-curves.
-- Baseline comparison against sequence-only, static structure, repeated-single
-  conformer, and reduced AF3.
-- Written decision on whether generative modeling is justified.
+### First 3 Months
 
-## 6-Month Milestone
+- Freeze data, pipeline version, and endpoint.
+- Build manifest.
+- Run leakage checks.
+- Run premise tests.
+- Generate K-curves on a pilot subset.
+- Decide whether the thesis is viable as compression/adaptive sampling.
 
-- Scaled redundancy and K-curves.
-- Coreset method that preserves structural and downstream metrics.
-- Prospective reduced-generation pilot.
-- End-to-end compute accounting.
-- Thesis core is viable without a generator.
+### First 6 Months
 
-## 12-Month Milestone
+- Scale saturation analysis to the full leakage-safe dataset.
+- Implement coreset selection.
+- Run prospective reduced-generation pilots.
+- Quantify end-to-end compute and storage reductions.
+- Produce a thesis-core report.
 
-- Optional learned selector, prototype model, CDR-frame flow, or representation
-  distillation model.
-- External validation against available multistate, apo/holo, MD, or
-  antibody-ensemble baselines.
-- Paper- or thesis-quality benchmark and methods writeup.
+### First 12 Months
+
+- Add generative distillation only if justified.
+- Compare against external ensemble baselines.
+- Validate on experimental or MD-supported conformational sets where possible.
+- Write final thesis and paper-style methods report.

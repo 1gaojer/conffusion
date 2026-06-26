@@ -3,136 +3,152 @@
 ## Working Title
 
 How many antibody conformers are enough? Task-preserving compression and
-adaptive sampling of pseudo-bound BCR conformer ensembles for antigen-retrieval
-models.
+adaptive sampling of pseudo-bound BCR conformer ensembles for antigen retrieval.
 
 ## Rationale
 
-Gaeun's current conformer-generation pipeline produces large antibody/BCR
-conformer ensembles using Protein Hunter and AF3-style cofolding. These
-ensembles are intended to expose conformational variability that may help
-MCA/ConFormer-style representation learning and antigen retrieval. The pipeline
-is expensive and can produce thousands of candidate structures per antibody
-before filtering. It is not yet clear whether all of this conformational
-diversity is necessary, whether it improves downstream performance beyond
-sequence or static-structure baselines, or whether most useful signal can be
-preserved with a much smaller subset.
+Gaeun's conformer-generation workflow uses Protein Hunter and AlphaFold3-style
+cofolding to produce large antibody/BCR conformer ensembles. These ensembles are
+intended to expose antibody conformational variability that may improve
+MCA/ConFormer-style representation learning and downstream antigen retrieval.
+The workflow is expensive, version-dependent, and can produce thousands of
+candidate structures per antibody before filtering.
 
-This project treats the generated structures as pseudo-bound computational
-proposal ensembles. It does not assume that PH/AF3 sample frequencies are
-physical occupancies or that the generated set is a true antibody dynamics
-ensemble.
+The central unresolved question is not whether diffusion models can generate
+protein-like structures. That has already been demonstrated by several protein
+and antibody generative-model families. The sharper question is whether Gaeun's
+large PH/AF3 ensembles contain task-relevant conformational information that
+cannot be preserved by much smaller, cheaper ensembles.
+
+This proposal treats the generated conformers as a pseudo-bound computational
+proposal ensemble. It does not assume that PH/AF3 sample frequencies are
+Boltzmann weights or that the generated structures represent a true physical
+equilibrium distribution.
 
 ## Central Hypothesis
 
-Large PH/AF3-generated antibody conformer ensembles contain substantial
-structural and representation-level redundancy, and a small, strategically
-selected or adaptively generated subset can preserve most task-relevant
-conformational coverage and downstream antigen-retrieval performance at much
-lower compute cost.
+Large PH/AF3 antibody conformer ensembles contain substantial structural and
+representation-level redundancy. A small, strategically selected or adaptively
+generated subset can preserve most task-relevant conformational coverage and
+downstream antigen-retrieval performance at much lower compute cost.
 
 ## Aim 1: Test Whether Full Conformer Ensembles Add Useful Signal
 
-The first aim is to establish whether conformer variability is actually useful
-under strict controls. For each antibody target, compare the full PH/AF3
-ensemble against:
+The first aim is to establish whether conformer ensembles provide measurable
+benefit over simpler alternatives. For each antibody target, compare:
 
-- sequence-only baselines;
-- one static or predicted structure;
+- full PH/AF3 ensemble;
+- sequence-only baseline;
+- one predicted or static antibody structure;
 - repeated copies of one conformer;
-- reduced-seed AF3 without the full PH protocol;
-- random coordinate or torsion perturbations;
-- shuffled-conformer negative controls.
+- reduced AF3-only ensemble;
+- simple random coordinate perturbations;
+- reduced PH/AF3 branches where available.
 
-Evaluation should include structural diversity, frozen ConFormer embedding
-preservation, output stability, and downstream nearest-neighbor antigen
-retrieval or disease-panel ranking. Splits must be target-level and should be
-family-aware to avoid conformer-level leakage.
+Evaluation should include structural diversity metrics, ConFormer embedding
+preservation, and downstream nearest-neighbor antigen retrieval or disease-panel
+ranking. Splits must be target-level or family-level. No conformers from the
+same antibody target should appear on both sides of train/test.
 
-Expected outcome: this aim determines whether the downstream model uses
-meaningful conformational variability. If full ensembles do not outperform
-simpler controls, the project should diagnose leakage, architecture, or
-unnecessary pipeline complexity before building a generator.
+Expected outcome: This aim determines whether conformational variability is
+actually being used by the downstream model. If the full ensemble does not beat
+sequence-only, static-structure, and repeated-single-conformer controls, the
+project should diagnose architecture, leakage, or unnecessary pipeline
+complexity before attempting generative modeling.
 
 ## Aim 2: Identify The Smallest Task-Sufficient Conformer Subset
 
-The second aim is to build ensemble-size saturation curves. Evaluate subset
-sizes such as:
+The second aim is to build ensemble-size saturation curves. For each target,
+evaluate subset sizes:
 
 ```text
 K = 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, full
 ```
 
-Compare selection policies:
+Selection methods should include:
 
-- uniform random sampling with repeated draws;
+- uniform random sampling, repeated many times;
 - stratified sampling across PH design, cycle, AF3 seed, and AF3 model;
-- one conformer per PH design;
-- quality-score selection;
-- k-medoids or farthest-point sampling in structural space;
-- facility-location or determinantal point process selection;
-- representation-aware coresets that preserve ConFormer embedding moments.
+- k-medoids or k-center sampling in structural feature space;
+- farthest-point sampling;
+- cluster medoids;
+- representation-aware coreset selection;
+- ConFormer moment matching when appropriate.
 
-Metrics should include CDR-H3 and all-CDR RMSD coverage, VH/VL orientation
-diversity, cluster recall, teacher-to-subset coverage, subset-to-teacher
-precision, embedding mean/covariance preservation, retrieval performance, and
-compute/storage cost.
+Metrics should include CDR-H3 and all-CDR coverage, VH/VL orientation diversity,
+cluster recall, teacher-to-subset and subset-to-teacher distances, ConFormer
+embedding mean/covariance preservation, downstream output stability, retrieval
+metrics, and compute/storage cost.
 
-Expected outcome: this aim gives Gaeun a quantitative answer to how far the
-ensemble can be shrunk before structural or downstream quality degrades.
+Expected outcome: This aim produces a direct answer to Gaeun's practical
+optimization question: how far can the ensemble be shrunk before structural or
+downstream quality degrades?
 
-## Aim 3: Reduce Generation Cost Prospectively
+## Aim 3: Reduce Generation-Time Cost Prospectively
 
-Post-hoc compression reduces storage and downstream model cost but does not save
-the original PH/AF3 compute. The third aim is therefore to analyze where
-diversity enters the pipeline and test reduced generation protocols before the
-full ensemble is generated.
+Post-hoc compression can reduce storage and downstream training cost, but it
+does not recover AF3 compute already spent. The third aim is to identify where
+new conformational modes actually enter the pipeline and use that information
+to reduce generation cost.
 
-Decompose variation by:
+Perform hierarchical variance decomposition across:
 
 - PH design;
 - PH cycle;
 - contact-conditioning choice;
+- pseudo-binder size or identity where available;
 - AF3 seed;
 - AF3 model;
-- filter status and confidence metrics.
+- filter outcome.
 
-Then test fixed and adaptive protocols:
+Then test reduced or adaptive generation protocols:
 
 - fewer PH designs;
 - fewer cycles;
 - fewer AF3 seeds;
-- fewer AF3 models per seed;
-- one AF3 prediction per PH design followed by targeted expansion;
-- early stopping when cluster coverage, embedding moments, or downstream
-  predictions converge.
+- fewer AF3 models;
+- one AF3 output per PH branch before deeper allocation;
+- stop when new cluster discovery saturates;
+- allocate additional compute only to branches with high marginal mode yield.
 
-Expected outcome: this aim determines whether the expensive pipeline can be
-shortened before generation, not merely compressed afterward.
+Expected outcome: This aim converts post-hoc insight into prospective compute
+savings. A strong result would reduce AF3 calls or retained structures by an
+order of magnitude while preserving downstream performance within a predefined
+non-inferiority margin.
 
-## Optional Aim 4: Distill Or Generate A Small Conformer Coreset
+## Optional Aim 4: Distill A Small Conformer Prototype Generator
 
-Only after Aims 1-3 show that there is a coherent target distribution worth
-distilling, train a lightweight student model. The most realistic options are:
+Only after Aims 1-3 show that there is a coherent, useful target distribution,
+train a lightweight generative or set-prediction model. The recommended first
+formulation is not full all-atom antibody generation. It is one of:
 
-- a set-of-prototypes model that predicts 8-32 conformer medoids and weights;
-- a CDR-focused residual flow or diffusion model around an anchor structure;
-- a representation distillation model that maps sequence plus a small anchor
-  set to the full-ensemble ConFormer representation.
+- predict 8 to 32 conformer cluster medoids and weights;
+- generate CDR backbone frames or torsions around an anchor structure;
+- transport a pretrained antibody ensemble prior toward the PH/AF3 pseudo-bound
+  teacher distribution;
+- distill the full-ensemble ConFormer representation directly from sequence or
+  a small anchor ensemble.
 
-The model should generate CDR residue frames, torsions, or cluster prototypes
-rather than full all-atom antibody structures from scratch. A pretrained
-geometric or antibody-ensemble prior is preferred over training from random
-initialization.
+Expected outcome: This aim tests whether modern generative modeling can
+amortize the useful parts of the teacher distribution. It is a second-stage
+extension, not the dependency on which the thesis should succeed or fail.
 
-## Impact
+## Success Criteria
 
-This project would turn conformer generation from an expensive black-box
-preprocessing step into a measurable, optimizable component of antibody
-representation learning. It directly supports Gaeun's current optimization
-question by defining ensemble-quality readouts, reducing compute burden, and
-clarifying whether conformational diversity improves antigen retrieval.
+A successful core thesis would show that a small selected or adaptively
+generated ensemble preserves full-ensemble structural coverage and downstream
+retrieval performance at substantially lower cost.
 
-The defensible contribution is not "diffusion for antibodies." It is a rigorous
-study of the minimal structural distribution needed by conformer-aware BCR
-models, with generative modeling as a gated extension.
+A defensible positive result:
+
+> A cluster-aware adaptive sampler retains downstream performance within a
+> predefined non-inferiority margin while reducing AF3 calls or retained
+> structures by at least an order of magnitude.
+
+A defensible negative result:
+
+> The full ensemble does not outperform strict sequence-only, static-structure,
+> or repeated-single-conformer baselines, indicating that current conformer
+> generation is redundant, leaky, or not exploited by the downstream model.
+
+Both outcomes are scientifically useful.

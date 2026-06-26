@@ -1,139 +1,137 @@
 # Background And Rationale
 
-## What Conformer Generation Is For
+## Problem Setting
 
-Antibodies are not single rigid objects. Their frameworks are relatively
-constrained, but CDR loops, especially CDR-H3, and VH/VL orientation can vary.
-For antigen-retrieval or antibody-representation models, the hope is that a
-conformer ensemble exposes shape and paratope states that a single predicted
-structure misses.
+Antibodies are not static objects. Their binding-relevant regions, especially
+CDR-H3 and sometimes VH/VL orientation, can adopt multiple conformations.
+Gaeun's conformer-generation workflow attempts to expose useful antibody
+geometries by generating pseudo-bound structures with Protein Hunter and AF3.
+Those conformers can then feed conformer-aware models such as MCA/ConFormer for
+antigen retrieval or related downstream tasks.
 
-Gaeun's current pipeline uses Protein Hunter and AF3-style cofolding to create
-large pseudo-bound conformer ensembles. The intent is practical: produce many
-plausible antibody geometries that downstream models can use, then filter and
-preprocess them for conformer-aware learning.
+The workflow is expensive. Current versions of the pipeline are parameterized by
+PH design count, cycle count, AF3 seed count, AF3 model count, and filters. The
+exact arithmetic is version-dependent and must be verified before use. The
+important point for this project is that the process can create thousands of
+candidate structures per antibody before filtering.
 
-## The Distribution Being Modeled
+## What Distribution Is Being Modeled?
 
-A useful formalization is:
-
-```text
-q_teacher(x | s, u)
-```
-
-where:
-
-- `x` is an antibody conformation;
-- `s` is the paired VH/VL sequence;
-- `u` includes PH design branch, cycle, contact-conditioning choices, pseudo
-  binder information, AF3 seed/model, templates, MSA state, confidence scores,
-  and filtering.
-
-This is different from:
+The generated ensemble should be written as a teacher or proposal distribution:
 
 ```text
-p_physical(x | s, temperature, solvent, binding state, ...)
+q_PH/AF3(x | sequence, pipeline settings, pseudo-binder/context, filters)
 ```
 
-PH/AF3 ensembles are computational proposal ensembles. Their sample counts
-reflect a protocol, not thermodynamic occupancies. A mode sampled 100 times by
-PH/AF3 is not automatically 100 times more populated in solution than a mode
-sampled once.
+where `x` is an antibody conformation.
 
-## Why A Generative Model Is Plausible
-
-The problem is mathematically compatible with diffusion, flow matching, and
-transformer-based generation because the output is a conditional distribution
-over structures:
+This is not the same as a physical equilibrium distribution:
 
 ```text
-p(conformer | antibody sequence, deployable context)
+p_physical(x | sequence, temperature, solvent, pH, ligand state, environment)
 ```
 
-or, more practically:
+PH/AF3 sample counts do not automatically imply physical occupancies. A mode
+sampled 50 times is not necessarily 50 times more populated in solution than a
+mode sampled once. Counts may reflect branch settings, pseudo-binder choices,
+AF3 seeds, templates, filters, or implementation details.
 
-```text
-p(conformer cluster | antibody target)
-```
+Therefore the defensible claim is:
 
-The key is the representation. Antibody conformers should not be modeled like
-pixels. Reasonable structural variables include:
+> We model, compress, or distill a useful computational proposal ensemble.
 
-- residue frames in SE(3);
-- backbone torsions;
-- CDR loop anchor frames;
-- VH/VL orientation;
-- side-chain chi torsions if needed;
-- learned conformer-cluster or structure-token latents.
+The claim to avoid is:
 
-The model should encode geometry by construction: global rotation/translation
-equivariance, chain continuity, chirality, bond geometry, sterics, loop closure,
-and disulfide constraints.
-
-## How This Differs From Image Diffusion And LoRA
-
-The useful analogy from image/video diffusion:
-
-- condition on an input;
-- sample from noise;
-- generate multiple plausible outputs;
-- use guidance or reranking;
-- distill a slow sampler into a faster one;
-- adapt a pretrained prior.
-
-The non-transferable parts:
-
-- proteins have hard geometric validity constraints;
-- conformers are unordered sets, not video frames;
-- millions of conformer files are not millions of independent examples;
-- sample frequency in a teacher pipeline is not physical occupancy;
-- a "style" LoRA analogue may only learn AF3/PH artifacts.
-
-If parameter-efficient adaptation is used, it should be on top of a strong
-protein or antibody structural prior. The LoRA-like mechanism is an engineering
-strategy, not the scientific thesis.
-
-## Relevant Model Families
-
-General protein generators:
-
-- RFdiffusion shows that diffusion over protein structures can support powerful
-  conditional backbone and binder design.
-- FrameDiff gives a principled SE(3) diffusion formulation over residue frames.
-- Flow-matching variants such as AlphaFlow and ESMFlow show how static
-  structure predictors can become sequence-conditioned ensemble samplers.
-
-Protein ensemble models:
-
-- AlphaFlow/ESMFlow are highly relevant because they model conformational
-  ensembles rather than single structures.
-- BioEmu is a useful reference for what equilibrium-emulation claims require:
-  MD data, static structures, experimental observables, and physical validation.
-
-Antibody-specific generators:
-
-- DiffAb, IgDiff, IgFlow, AbDiffuser, and RFantibody-like work show that
-  antibody and CDR generation are active, feasible model classes.
-- ABodyBuilder4-STEROIDS is especially important because it directly targets
-  antibody conformational ensembles using flow matching. That crowds out a
-  generic "VH/VL sequence to antibody ensemble" novelty claim.
-
-This project's novelty should therefore be the PH/AF3 pseudo-bound,
-task-directed proposal distribution and the downstream question of how much
-of that distribution is actually necessary.
+> We recover the true antibody energy landscape.
 
 ## Why Compression Comes Before Generation
 
-Before training a generator, the project must answer:
+The first baseline to beat is not a diffusion model. It is smart subsampling of
+the existing teacher ensemble.
 
-1. Does the full ensemble beat simple controls?
-2. How many nonredundant modes exist?
-3. Which pipeline levels create useful diversity?
-4. Can simple selection already preserve downstream behavior?
-5. Does a fast antibody ensemble model already match PH/AF3?
+If random or cluster-aware selection of 16 to 64 conformers preserves downstream
+performance, then the key contribution is not a new generator. It is the
+discovery that the pipeline is over-sampling redundant modes, plus a procedure
+for obtaining a smaller task-sufficient ensemble.
 
-If simple subsampling works, the practical solution may be adaptive stopping or
-branch-aware reduced generation. If oracle coreset selection works but random
-selection fails, a learned selector is justified. If PH/AF3 uniquely discovers
-task-relevant pseudo-bound modes, then a generative distillation model becomes
-scientifically interesting.
+If random subsets fail but oracle coresets work, then a learned selector,
+adaptive sampler, or set-of-prototypes model becomes justified.
+
+If even oracle subsets fail, then a small generated ensemble is unlikely to
+match the full teacher unless it produces better-than-teacher structures, which
+would require independent validation.
+
+## Why This Still Connects To Generative Modeling
+
+The conformer problem is still a generative-modeling problem. Each antibody has
+a conditional distribution over possible conformers or conformer clusters.
+Diffusion, flow matching, and structure-token transformers are natural tools
+for multimodal distributions.
+
+The practical thesis path is:
+
+1. define the useful target distribution;
+2. measure how much of it is redundant;
+3. learn to select or sample a compact approximation;
+4. only then test a lightweight generative model.
+
+The likely useful generative target is local and structured:
+
+- CDR-H3 or all-CDR backbone frames;
+- VH/VL rigid-body orientation;
+- torsion perturbations around an anchor structure;
+- latent conformer cluster prototypes.
+
+Full all-atom antibody generation from scratch is a poor first target because
+it spends capacity on framework atoms and side-chain details that may not drive
+the downstream task.
+
+## Key Risks
+
+### Pipeline Artifact Learning
+
+A student model may learn PH/AF3 artifacts rather than antibody flexibility. It
+could reproduce seed, template, MSA, confidence, pseudo-binder, or filter
+patterns.
+
+### Privileged Conditioning
+
+If true antigen contacts, cognate-antigen size, templates, or complex-derived
+information are used to generate conformers that are later evaluated on antigen
+prediction, the conformer ensemble may carry privileged information unavailable
+at deployment.
+
+### Leakage
+
+Conformer-level splitting is invalid. Near-identical conformers from one
+antibody target must not appear in both train and test. Splits should group by
+paired sequence, CDR-H3 similarity, clonotype, V/J gene where relevant, PDB
+provenance, and antigen family for downstream retrieval tasks.
+
+### No Downstream Benefit
+
+The full ensemble may not improve over sequence-only or one-structure baselines.
+That would not be a failed experiment. It would show that current conformer
+generation is not yet justified for the chosen endpoint.
+
+### Overclaiming Biology
+
+Without independent MD, apo/holo structures, repeated experimental structures,
+NMR, HDX, SAXS, or prospective validation, the project should not claim physical
+dynamics.
+
+## Working Interpretation
+
+This project is strongest as an engineering-science thesis:
+
+> What information in a huge conformer ensemble is necessary for downstream
+> antibody representation learning, and how cheaply can that information be
+> preserved?
+
+It is weaker as a pure generative-model thesis:
+
+> Can I train a new antibody diffusion model from a few thousand teacher
+> ensembles?
+
+The former directly supports Gaeun's conformer-generation optimization. The
+latter is underpowered and crowded by existing protein and antibody generators.

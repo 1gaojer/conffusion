@@ -1,95 +1,94 @@
 # Conffusion
 
-Conffusion is a proposal and planning repository for a possible Jerry-owned
-thesis project at the intersection of antibody conformer generation,
-conformer-aware representation learning, and generative modeling.
+Conffusion is a documentation-first research workspace for a possible thesis
+project on efficient antibody conformer ensemble modeling.
 
-The working idea is not "train Stable Diffusion for antibodies." The sharp
-version is:
+The working idea is not to train a full antibody diffusion model from scratch.
+The immediate scientific target is narrower:
 
 > Determine the smallest task-sufficient antibody conformer ensemble, then
-> compress, select, or amortize Gaeun's expensive Protein Hunter / AF3
-> pseudo-bound conformer-generation pipeline while preserving downstream
-> retrieval and representation value.
+> compress, select, or amortize Gaeun's expensive PH/AF3 pseudo-bound ensemble
+> while preserving downstream representation and antigen-retrieval value.
 
-## Current Thesis Hypothesis
+## Central Hypothesis
 
-Large PH/AF3-generated antibody conformer ensembles contain substantial
-structural and representation-level redundancy. A small, strategically selected
-or adaptively generated subset can preserve most task-relevant conformational
-coverage and downstream antigen-retrieval performance at much lower compute
-cost.
+Large Protein Hunter / AlphaFold3 generated antibody conformer ensembles contain
+substantial structural and representation-level redundancy. A small,
+strategically selected or adaptively generated subset can preserve most
+task-relevant conformational coverage and downstream retrieval performance at
+much lower compute cost.
 
-This repo treats the generated structures as computational proposal ensembles,
-not as calibrated physical equilibrium ensembles.
+This project treats the generated conformers as a computational proposal
+distribution, not as a calibrated physical equilibrium ensemble.
 
-## Why This Exists
+## Why This Repo Exists
 
-Gaeun's current conformer-generation optimization question is practical and
-scientific:
+Gaeun is currently interested in optimizing conformer generation. Jerry is
+looking for a thesis idea that connects that practical bottleneck to modern
+generative modeling, diffusion, flow matching, and representation learning.
 
-- How many generated conformers are actually needed?
-- Which pipeline branches produce new structural modes?
-- Does the full ensemble improve downstream retrieval beyond sequence-only,
-  static-structure, reduced-AF3, or repeated-single-conformer baselines?
-- If the ensemble helps, can its useful distribution be sampled more cheaply?
+The key question is:
 
-Jerry's personal interest in diffusion, flow, LoRA-style adaptation, and
-generative image/video models motivates the optional modeling direction. The
-core thesis, however, should survive even if a learned generator never beats
-strong selection and adaptive-sampling baselines.
+> What is the minimal structural distribution needed by a conformer-aware BCR
+> representation model, and can we obtain that distribution without thousands
+> of AF3 cofolds per antibody?
 
 ## Repository Map
 
-- [docs/proposal.md](docs/proposal.md): one-page proposal plus extended aims.
-- [docs/background.md](docs/background.md): scientific and modeling rationale.
-- [docs/research-plan.md](docs/research-plan.md): phased plan and go/no-go
-  gates.
-- [docs/evaluation.md](docs/evaluation.md): baselines, metrics, leakage
-  controls, and statistical tests.
-- [docs/implementation-notes.md](docs/implementation-notes.md): expected data
-  manifests, pipeline metadata, and ownership boundaries.
-- [docs/questions-for-gaeun-and-sophia.md](docs/questions-for-gaeun-and-sophia.md):
-  questions to resolve before committing.
-- [docs/references.md](docs/references.md): papers and tools to read.
-
-## Project Boundaries
-
-This is a Jerry-owned planning repository. It should not modify Gaeun-owned
-source code, shared outputs, cluster jobs, or collaborator-owned data. Any
-future analysis code should read from approved sources and write only to
-Jerry-owned paths unless explicit approval says otherwise.
+- `docs/proposal.md`: thesis-style proposal with hypothesis and aims.
+- `docs/background.md`: scientific context and rationale.
+- `docs/research-plan.md`: staged plan, gates, and deliverables.
+- `docs/evaluation.md`: baselines, metrics, controls, and failure modes.
+- `docs/implementation-notes.md`: manifest fields, data handling, and future
+  implementation notes.
+- `docs/questions-for-gaeun-and-sophia.md`: questions to resolve before
+  committing.
+- `docs/references.md`: papers, methods, and source links.
+- `docs/source-notes.md`: notes on the GPT-Pro and Deep Research outputs.
+- `notes/model-report-synthesis.md`: synthesis of the three model reports.
+- `notes/`: scratch notes that are not yet evidence.
 
 ## Current Position
 
 Green light:
 
 - Ensemble redundancy analysis.
-- Subsampling and coreset curves.
-- ConFormer sensitivity tests.
-- Prospective reduced-generation and adaptive-stopping studies.
+- Task-preserving coreset selection.
+- Adaptive stopping and budget allocation for PH/AF3.
+- Direct representation distillation as a baseline.
 
 Amber light:
 
-- CDR-focused flow/diffusion or set-of-prototypes distillation after the
-  compression premise survives.
+- CDR-focused residual flow or set-of-prototypes generator, only after the
+  ensemble benefit and coreset structure are established.
 
 Red light:
 
-- Full all-atom antibody generation from scratch.
-- Claims about true antibody dynamics, free energies, or Boltzmann occupancies
-  from PH/AF3 sample frequencies alone.
+- Full all-atom antibody generation from scratch on the current target count.
+- Claims that PH/AF3 sample frequencies are physical occupancy probabilities.
+- Claims that sequence-only generated ensembles add antigen information unless
+  additional deployable conditioning variables are present.
 
 ## Immediate Next Step
 
-Freeze one pilot dataset and answer three questions:
+Before committing to a generative thesis, run a short saturation and leakage
+study:
 
 1. Does the full ensemble outperform sequence-only, static-structure, and
-   repeated-single-conformer controls on a leakage-aware retrieval endpoint?
-2. Can an oracle or simple coreset shrink the ensemble while preserving
-   structural coverage and downstream behavior?
-3. Does blind PH/AF3 outperform a fast antibody-ensemble baseline such as
-   ABodyBuilder4-STEROIDS or reduced-seed AF3?
+   repeated-single-conformer baselines on a leakage-safe endpoint?
+2. Can an oracle or simple coreset shrink the ensemble without losing
+   structural coverage or downstream performance?
+3. Does blind PH/AF3 provide useful modes beyond fast antibody ensemble
+   baselines such as ABB4-STEROIDS?
 
-If yes, distillation becomes compelling. If no, the negative result is still
-scientifically useful and should redirect the thesis away from generation.
+If those answers are positive, a distillation or lightweight generative
+extension is justified. If not, the scientifically useful result is that the
+current ensemble is redundant, leaky, or not yet exploited by the downstream
+model.
+
+## Ownership And Scope
+
+This repo is a Jerry-owned planning and documentation workspace. It should not
+modify Gaeun-owned source code, shared generated conformers, cluster jobs, or
+collaborator outputs. External assets should be read-only unless copied into a
+Jerry-owned workspace with clear provenance.

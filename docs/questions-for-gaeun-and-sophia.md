@@ -26,10 +26,15 @@
     available for quality-model training?
 12. Which component is actually expensive: PH generation, AF3 inference,
     filtering, storage, ConFormer training, or all of them?
-13. Which downstream endpoint is mature enough to be primary: nearest-neighbor
+13. Can one dataset snapshot, pipeline version, split, and downstream benchmark
+    be frozen for this thesis?
+14. Which downstream endpoint is mature enough to be primary: nearest-neighbor
     retrieval, antigen-surface retrieval, closed-set antigen classification,
     disease-panel ranking, or something else?
-14. Would a rigorous negative result, such as "16 random conformers are enough"
+15. What non-inferiority margin would be acceptable for a compressed ensemble?
+16. Are there experimental multistate, apo/holo, MD, or ALL-conformations
+    groups that can serve as independent validation?
+17. Would a rigorous negative result, such as "16 random conformers are enough"
     or "one static structure is enough," be scientifically acceptable?
 
 ## Questions For Sophia
@@ -54,6 +59,11 @@
    antibody engineering, or computational immunology?
 10. Is a three-month go/no-go gate acceptable before committing thesis effort
     to a diffusion or flow model?
+11. Are there licensing or collaboration constraints on publishing AF3-derived
+    conformer summaries, distilled model weights, or benchmark splits?
+12. If the project shows that an external antibody ensemble model is sufficient,
+    would that be acceptable as a thesis direction or should the thesis remain
+    centered on Gaeun's PH/AF3 pipeline?
 
 ## Questions For Jerry
 

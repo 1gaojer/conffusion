@@ -1,62 +1,177 @@
-# References And Starting Points
+# References And Source Map
 
-This is a reading list, not a completed literature review.
+This is a working source map, not a final bibliography. Verify versions,
+publication status, and claims before citing in a thesis.
 
-## Protein Diffusion And Flow Models
+## Project-Local Sources To Verify
 
-- RFdiffusion: de novo protein structure and function design with diffusion.
-  https://www.nature.com/articles/s41586-023-06415-8
-- FrameDiff: SE(3) diffusion over protein backbone frames.
-  https://arxiv.org/abs/2302.02277
-- AlphaFlow / ESMFlow: flow matching for protein conformational ensembles.
-  https://arxiv.org/abs/2402.04845
-- AlphaFlow code.
-  https://github.com/bjing2016/alphaflow
-- ESM3: multimodal protein sequence, structure, and function generation.
-  https://www.science.org/doi/10.1126/science.ads0018
+These are not tracked in this repo, but they are the first sources to inspect
+before making present-tense claims.
 
-## Protein Ensemble Modeling
+- Research dashboard:
+  `/Users/jerrygao/Research/research-state.md`
+- Gaeun thesis support brief:
+  `/Users/jerrygao/Research/projects/gaeun-thesis-support.md`
+- BCR conformer pipeline brief:
+  `/Users/jerrygao/Research/projects/bcr-conformer-pipeline.md`
+- Local conformer pipeline wrapper:
+  `/Users/jerrygao/Research/liu-lab/bcr-conformer-pipeline`
+- Gaeun source pipeline on cluster, read-only:
+  `/external/liulab/gkim/antigen_prediction/datasets/pipeline/conformer_generation`
+- Jerry-owned cluster conformer pipeline copy:
+  `/project/liulab/jg1920/bcr-conformer-pipeline`
 
-- BioEmu: scalable emulation of protein equilibrium ensembles with generative
-  deep learning.
+## Protein Structure Generative Models
+
+### RFdiffusion
+
+- Watson et al., "De novo design of protein structure and function with
+  RFdiffusion."
+- Link: https://www.nature.com/articles/s41586-023-06415-8
+- Relevance: establishes diffusion for protein backbone generation and
+  conditional protein design.
+- Caveat: primarily de novo design, not fixed-sequence conformer ensemble
+  modeling.
+
+### FrameDiff
+
+- "SE(3) diffusion model with application to protein backbone generation."
+- Link: https://arxiv.org/abs/2302.02277
+- Relevance: residue-frame diffusion on SE(3), useful representation for CDR
+  frame generation.
+- Caveat: architecture reference, not an antibody ensemble method.
+
+### AlphaFlow
+
+- "AlphaFold Meets Flow Matching for Generating Protein Ensembles."
+- Link: https://arxiv.org/abs/2402.04845
+- PMLR: https://proceedings.mlr.press/v235/jing24a.html
+- Relevance: direct conceptual precedent for converting static structure
+  predictors into sequence-conditioned ensemble samplers.
+- Caveat: general protein ensembles, not PH/AF3 pseudo-bound antibody
+  distillation.
+
+### AlphaFlow-Lit
+
+- Link: https://openreview.net/forum?id=Z6fPAsu91p
+- Related arXiv link reported in model output:
+  https://arxiv.org/abs/2407.12053
+- Relevance: efficiency-oriented ensemble sampling and amortization precedent.
+- Caveat: verify current status and exact speedup before citing.
+
+### BioEmu
+
+- "Scalable emulation of protein equilibrium ensembles with generative deep
+  learning."
+- Microsoft page:
   https://www.microsoft.com/en-us/research/publication/scalable-emulation-of-protein-equilibrium-ensembles-with-generative-deep-learning/
-- AlphaFlow-Lit: lightweight AlphaFlow-style sampling.
-  https://openreview.net/forum?id=Z6fPAsu91p
+- Science link:
+  https://www.science.org/doi/10.1126/science.adv9817
+- PubMed:
+  https://pubmed.ncbi.nlm.nih.gov/40638710/
+- Relevance: standard for serious equilibrium-ensemble emulation claims.
+- Caveat: BioEmu uses MD/static/thermodynamic supervision; PH/AF3 distillation
+  is a different and weaker claim.
+
+### ESM3
+
+- "Simulating 500 million years of evolution with a language model."
+- Link: https://www.science.org/doi/10.1126/science.ads0018
+- Relevance: sequence/structure/function token modeling and possible latent
+  structure abstraction.
+- Caveat: structure-token resolution may be too coarse for subtle CDR mode
+  distinctions.
 
 ## Antibody Generative Models
 
-- DiffAb: antigen-specific antibody CDR sequence/structure generation with
-  diffusion.
+### DiffAb
+
+- "Antigen-Specific Antibody Design and Optimization with Diffusion-Based
+  Generative Models."
+- Link:
   https://proceedings.neurips.cc/paper_files/paper/2022/hash/3fa7d76a0dc1179f1e98d1bc62403756-Abstract-Conference.html
-- IgDiff: SE(3) diffusion for antibody variable-domain design.
-  https://arxiv.org/abs/2405.07622
-- AbDiffuser: full-atom antibody structure and sequence diffusion.
-  https://arxiv.org/abs/2308.05027
-- ABodyBuilder4-STEROIDS: antibody conformational ensemble sampling with a
-  flow-matching model.
-  https://www.biorxiv.org/content/10.64898/2026.04.14.718378v1.full-text
+- Relevance: antibody CDR sequence/structure generation conditioned on antigen.
+- Caveat: antibody design, not fixed-sequence conformer ensemble compression.
 
-## Related Benchmarking And Guardrails
+### AbDiffuser
 
-Topics to expand:
+- "Full-Atom Antibody Design."
+- Link:
+  https://proceedings.neurips.cc/paper_files/paper/2023/file/801ec05b0aae9fcd2ef35c168bd538e0-Paper-Conference.pdf
+- Relevance: full-atom antibody generation with physics-informed structure
+  priors.
+- Caveat: broader and more complex than needed for fixed-sequence CDR conformer
+  selection.
 
-- antibody train/test leakage and family-aware splits;
-- PDB/SAbDab overlap and temporal holdouts;
-- apo/holo and multistate antibody structure validation;
-- CDR-H3 loop clustering and canonical loop definitions;
-- retrieval metrics and hard-negative construction;
-- non-inferiority testing for compressed ensembles.
+### IgDiff
 
-## Local Context To Keep In Sync
+- Link: https://arxiv.org/abs/2405.07622
+- Relevance: antibody-specific adaptation of geometric diffusion.
+- Caveat: design/generation prior, not calibrated teacher-ensemble
+  distillation.
 
-Relevant Research workspace files:
+### RFantibody / Antibody-Specific RFdiffusion
 
-- `/Users/jerrygao/Research/research-state.md`
-- `/Users/jerrygao/Research/projects/gaeun-thesis-support.md`
-- `/Users/jerrygao/Research/projects/bcr-conformer-pipeline.md`
-- `/Users/jerrygao/Research/projects/thesis-ideas.md`
-- `/Users/jerrygao/Research/context/research-environment.md`
+- Link: https://www.nature.com/articles/s41586-025-09721-5
+- Relevance: antibody-specific RFdiffusion-style design.
+- Caveat: epitope-directed design, not fixed-sequence conformer ensembles.
 
-Relevant local repo:
+### ABodyBuilder4-STEROIDS
 
-- `/Users/jerrygao/Research/liu-lab/bcr-conformer-pipeline`
+- Reported title/context: antibody conformational ensembles from paired VH/VL
+  sequences using an SE(3) flow model.
+- BioRxiv link from GPT-Pro output:
+  https://www.biorxiv.org/content/biorxiv/early/2026/04/16/2026.04.14.718378.full.pdf
+- Alternate DOI-style link to verify:
+  https://www.biorxiv.org/content/10.64898/2026.04.14.718378v1
+- Oxford metadata:
+  https://www.oqi.ox.ac.uk/publication/2412744/dimensions
+- Relevance: mandatory novelty check for generic antibody ensemble generation.
+- Caveat: preprint status and benchmark claims need independent verification.
+
+## Teacher-Generation Context
+
+### Protein Hunter
+
+- Reported source:
+  https://www.biorxiv.org/content/10.1101/2025.10.10.681530v1
+- Alternate link from GPT-Pro with context:
+  https://www.biorxiv.org/content/10.1101/2025.10.10.681530v2.full.pdf
+- Relevance: part of Gaeun's teacher-generation mechanism.
+- Caveat: Protein Hunter is a protein design method, not a calibrated antibody
+  dynamics model.
+
+### BindCraft
+
+- Relevance: related structure-prediction-driven binder hallucination context.
+- Action: add exact paper/source after verification if needed for thesis text.
+
+## External Validation And Benchmarks
+
+### ALL-conformations
+
+- Link: https://www.nature.com/articles/s42256-025-01131-6
+- Relevance: experimentally observed loop conformations and possible external
+  support for whether generated CDR modes are observed in PDB-derived data.
+- Caveat: PDB-derived and may overlap with SAbDab or training sets; requires
+  strict de-overlap.
+
+### AbBiBench
+
+- Relevance: antibody design/evaluation benchmark warning that downstream
+  functional evaluation and leakage-aware splits matter.
+- Action: add verified primary source link before citing.
+
+## Internal Model Outputs
+
+See `docs/source-notes.md` for how to treat the three attached model reports.
+
+Working rule:
+
+- Deep Research output: conceptually useful, but citation handles need
+  reconstruction.
+- GPT-Pro with presentation context: best project-specific grounding, but
+  presentation-derived claims require live verification.
+- GPT-Pro without presentation context: best novelty warning around
+  ABB4-STEROIDS, but any presentation-like file-citation claims require
+  mapping to actual supplied documents.
