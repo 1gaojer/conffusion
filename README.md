@@ -56,10 +56,14 @@ The key question is:
   run on the medium copied PH/AF3 dataset.
 - `notes/aim1-phase1-2-antibody-structural-results.md`: antibody-chain follow-up
   showing how much global diversity remains on heavy/light chains.
+- `notes/aim1-phase1-3-cdr-structural-results.md`: CDR-focused follow-up showing
+  that H-CDR3 carries substantially more diversity than whole VH/VL RMSD.
 - `scripts/aim1_phase1_structural.py`: reproducible CPU-only parser,
   pairwise-RMSD, and saturation analysis script.
 - `scripts/aim1_phase1_antibody_structural.py`: CPU-only heavy/light chain
   assignment and antibody-only RMSD/saturation analysis.
+- `scripts/aim1_phase1_cdr_structural.py`: CPU-only IMGT CDR numbering,
+  framework-aligned CDR RMSD, and CDR saturation analysis.
 - `notes/`: scratch notes that are not yet evidence.
 
 ## Current Position
