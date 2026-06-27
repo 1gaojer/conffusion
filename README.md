@@ -54,8 +54,12 @@ The key question is:
   conformer datasets.
 - `notes/aim1-phase1-medium-results.md`: first CPU-only structural saturation
   run on the medium copied PH/AF3 dataset.
+- `notes/aim1-phase1-2-antibody-structural-results.md`: antibody-chain follow-up
+  showing how much global diversity remains on heavy/light chains.
 - `scripts/aim1_phase1_structural.py`: reproducible CPU-only parser,
   pairwise-RMSD, and saturation analysis script.
+- `scripts/aim1_phase1_antibody_structural.py`: CPU-only heavy/light chain
+  assignment and antibody-only RMSD/saturation analysis.
 - `notes/`: scratch notes that are not yet evidence.
 
 ## Current Position

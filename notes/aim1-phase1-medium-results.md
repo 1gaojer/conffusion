@@ -160,3 +160,15 @@ Add antibody-focused structural readouts:
 
 This should happen before making strong claims about how many conformers are
 "enough" for antibody representation.
+
+## Follow-Up
+
+Phase 1.2 antibody-focused analysis was completed after this global screen. See:
+
+```text
+notes/aim1-phase1-2-antibody-structural-results.md
+```
+
+That follow-up showed that the large global RMSD signal mostly collapses when
+restricted to heavy/light antibody chains. Treat the global result here as a
+screening result, not the main antibody-relevant conclusion.
