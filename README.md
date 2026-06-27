@@ -40,6 +40,9 @@ The key question is:
 - `docs/research-plan.md`: staged plan, gates, and deliverables.
 - `docs/aim1-phase1-benchmark-plan.md`: concrete data inventory and build plan
   for the first Aim 1 benchmark.
+- `docs/aim1-phase1-4-representation-sensitivity-plan.md`: next-step plan after
+  the CDR result, focused on whether MCA/ConFormer embeddings use H-CDR3
+  diversity.
 - `docs/evaluation.md`: baselines, metrics, controls, and failure modes.
 - `docs/implementation-notes.md`: manifest fields, data handling, and future
   implementation notes.

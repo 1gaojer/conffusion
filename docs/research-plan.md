@@ -37,6 +37,9 @@ Goal: test the premise before optimizing.
 
 Detailed working plan: `docs/aim1-phase1-benchmark-plan.md`.
 
+Current follow-up after the CDR structural result:
+`docs/aim1-phase1-4-representation-sensitivity-plan.md`.
+
 This phase is Aim 1 in operational form. Keep it organized around three
 questions:
 
