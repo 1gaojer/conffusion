@@ -1,0 +1,47 @@
+{
+  "generated_at_local": "2026-06-27T19:57:56",
+  "generated_output_only_manifest_path": "/Users/jerrygao/Research/liu-lab/conffusion/manifests/gaeun_conformer_ensembles_generated_non_1000_test_20260627.tsv",
+  "generated_output_only_rows_non_1000_all": 359,
+  "generated_output_only_rows_non_1000_test": 1087,
+  "main_rows_af3_results": 1070,
+  "main_rows_filtered_af3_models": 616,
+  "main_rows_input_only": 215,
+  "main_rows_non_1000_test": 1302,
+  "main_rows_overlap_1000_all": 728,
+  "main_rows_overlap_1000_train": 728,
+  "main_rows_prothunt_output": 745,
+  "main_rows_with_any_generated_output": 1087,
+  "manifest_path": "/Users/jerrygao/Research/liu-lab/conffusion/manifests/gaeun_conformer_ensembles_non_1000_test_20260627.tsv",
+  "remote_generated_at": "2026-06-27T19:57:56-0400",
+  "scan_errors": [],
+  "source_roots": {
+    "af3_input_jsons": "/external/liulab/gkim/antigen_prediction/datasets/conf_gen_results/af3_input_jsons",
+    "af3_results": "/external/liulab/gkim/antigen_prediction/datasets/conf_gen_results/af3_results",
+    "filtered_af3_models": "/external/liulab/gkim/antigen_prediction/datasets/conf_gen_results/filtered_af3_models",
+    "prothunt_conf_gen_results": "/external/liulab/gkim/antigen_prediction/datasets/conf_gen_results/prothunt_output",
+    "prothunt_dataset_root": "/external/liulab/gkim/antigen_prediction/datasets/prothunt_output"
+  },
+  "split_counts": {
+    "all": 930,
+    "test": 202,
+    "train": 728,
+    "trained_ids": 930
+  },
+  "split_dir": "/external/liulab/gkim/antigen_prediction/2026.06.19_retrain_mca_1000_confs/split_confs",
+  "stage_counts_non_1000_all": {
+    "af3_inputs_only": 215,
+    "af3_results": 314,
+    "filtered_af3_models": 45
+  },
+  "stage_counts_non_1000_test": {
+    "af3_inputs_only": 215,
+    "af3_results": 455,
+    "filtered_af3_models": 616,
+    "prothunt_output": 16
+  },
+  "strict_generated_output_only_manifest_path": "/Users/jerrygao/Research/liu-lab/conffusion/manifests/gaeun_conformer_ensembles_generated_non_1000_all_20260627.tsv",
+  "strict_non_1000_all_manifest_path": "/Users/jerrygao/Research/liu-lab/conffusion/manifests/gaeun_conformer_ensembles_non_1000_all_20260627.tsv",
+  "strict_rows_non_1000_all": 574,
+  "strict_rows_with_any_generated_output": 359,
+  "total_unique_targets_seen_any_stage": 1504
+}

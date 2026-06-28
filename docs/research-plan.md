@@ -31,21 +31,25 @@ Gate:
 - Do not start model development until the dataset snapshot, split, and endpoint
   are documented.
 
-## Phase 1: Does The Ensemble Matter?
+## Phase 1: Define The Retrieval Readout And Test Whether The Ensemble Matters
 
-Goal: test the premise before optimizing.
+Goal: define the endpoint and readout before optimizing conformer count.
 
 Detailed working plan: `docs/aim1-phase1-benchmark-plan.md`.
 
 Current follow-up after the CDR structural result:
 `docs/aim1-phase1-4-representation-sensitivity-plan.md`.
 
-This phase is Aim 1 in operational form. Keep it organized around three
+Current downstream gate after Phase 1.4:
+`docs/aim1-phase1-5-retrieval-preservation-plan.md`.
+
+This phase is Aim 1 in operational form. Keep it organized around four
 questions:
 
 1. What is the fair benchmark?
-2. Does the full ensemble beat simple controls?
-3. Does any structural diversity translate into useful representation or
+2. Which CDR/paratope-aware readout exposes useful ensemble signal?
+3. Does the full ensemble beat simple controls under that readout?
+4. Does any structural diversity translate into useful representation or
    retrieval signal?
 
 ### 1. Build A Fair Test
@@ -60,7 +64,19 @@ Tasks:
 - Confirm that conformers from the same antibody target do not appear on both
   sides of train/test.
 
-### 2. Compare Full Ensemble Against Simple Controls
+### 2. Define And Validate The Readout
+
+Experiments:
+
+- Global H/L pooling versus H-CDR3-only pooling.
+- Global H/L pooling versus all-CDR H/L pooling.
+- Global H/L pooling versus all-CDR mean plus variance or mean plus standard
+  deviation.
+- CDR readouts versus framework-only and random framework-window controls.
+- True labels versus shuffled-label controls.
+- PCA/UMAP inspection for the readout vectors when useful for Gaeun's framing.
+
+### 3. Compare Full Ensemble Against Simple Controls
 
 Experiments:
 
@@ -72,14 +88,14 @@ Experiments:
 - Full ensemble versus random coordinate perturbations.
 - Optional: PH/AF3 versus ABB4-STEROIDS or another antibody ensemble baseline.
 
-### 3. Judge By Useful Outputs
+### 4. Judge By Useful Outputs
 
 Metrics:
 
 - structural diversity and geometry validity;
 - CDR-H3, all-CDR, and VH/VL orientation coverage;
-- ConFormer output stability;
-- embedding mean and covariance preservation;
+- CDR/paratope-aware readout stability;
+- embedding mean and covariance preservation where they remain informative;
 - downstream retrieval metrics such as Hit@K and MRR;
 - disease-panel ranking or macro-F1 when classification is used;
 - ranking-bias diagnostics, especially whether the same antigen groups dominate
@@ -87,18 +103,52 @@ Metrics:
 
 Deliverable:
 
-- premise report: does ensemble variability improve the chosen endpoint, and
-  under which split/control conditions?
+- premise report: which readout exposes ensemble value, whether ensemble
+  variability improves the chosen endpoint, and under which split/control
+  conditions? Current report:
+  `docs/aim1-phase1-premise-report.md`.
 
 Go/no-go:
 
 - If the full ensemble does not help, pause generation work and diagnose model,
   endpoint, and leakage.
-- If it helps, proceed to compression.
+- If only CDR/paratope readouts help, make readout design part of the core
+  thesis before proceeding to compression.
+- If it helps under a defensible readout, proceed to task-aware compression.
 
-## Phase 2: Saturation And Coreset Curves
+Current checkpoint status:
 
-Goal: identify the smallest task-sufficient subset.
+- Gaeun confirmed that the correct model checkpoint is the June 19
+  `1000 conformer` checkpoint.
+- Phase 1.5a verified the exact checkpoint path/hash and used the June 24
+  `outputs_1000/reference_embeddings.npz` bank for internal retrieval/readout
+  diagnostics.
+- The current cleaner Gaeun-generated candidate endpoint is Tier B:
+  172 generated targets that are exact-PDB-unseen relative to the full 930-ID
+  checkpoint universe and have concatenated `VH+VL` global identity `<0.85` to
+  every checkpoint target.
+- Tier B pass manifest:
+  `manifests/tierb_sequence_deoverlap_20260627/gaeun_conformer_ensembles_generated_non_1000_all_tierB_vhvl85_pass_20260627.tsv`
+- Remaining leakage control before external validation claims: antigen/source
+  de-overlap. Tier C exact antigen/source-pair de-overlap has now been run as a
+  leakage-sensitivity check, but only 17 same-label retrieval queries are
+  evaluable, so it is not yet a stable external-validation endpoint.
+
+Phase 1 premise decision:
+
+- Continue to Aim 2 under a readout-first framing.
+- Treat all-CDR mean+std as the current leading readout, with H-CDR3/L-CDR3,
+  all-CDR H/L mean, global H/L, framework, random-window, shuffled-label, and
+  single-conformer controls retained.
+- Use Tier B Step 4 as the powered development endpoint for now.
+- Use Tier C only as a caveated leakage stress test unless the candidate
+  bank/grouping is expanded.
+- Do not claim solved conformer compression until a selector beats random under
+  the fixed CDR/paratope-aware retrieval endpoint.
+
+## Phase 2: Task-Aware Saturation And Coreset Curves
+
+Goal: identify the smallest task-sufficient subset under the fixed readout.
 
 Evaluate subset sizes:
 
@@ -116,7 +166,8 @@ Selection strategies:
 - cluster medoids;
 - facility-location objective;
 - ConFormer moment matching;
-- task-aware selection where appropriate.
+- CDR/paratope readout-aware selection;
+- retrieval-aware or task-aware selection where appropriate.
 
 Deliverable:
 
@@ -133,7 +184,7 @@ Gate:
 
 ## Phase 3: Prospective Cost Reduction
 
-Goal: reduce compute before full generation.
+Goal: reduce compute before full generation while preserving the Aim 1 readout.
 
 Variance decomposition:
 

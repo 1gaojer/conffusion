@@ -1,0 +1,33 @@
+{
+  "candidates": 359,
+  "fail_count_eq_1_00": 82,
+  "fail_count_ge_0_90": 142,
+  "fail_count_ge_0_95": 108,
+  "fail_identity_distribution": {
+    "max": 1.0,
+    "median": 0.991304,
+    "min": 0.850877,
+    "p25": 0.904762,
+    "p75": 1.0
+  },
+  "generated_at": "2026-06-27T20:21:55-0400",
+  "identity_rule": "global NW identical_aligned_columns / max(len), concatenated VH+VL",
+  "missing_identity_values": 0,
+  "outputs": {
+    "fail": "manifests/tierb_sequence_deoverlap_20260627/gaeun_conformer_ensembles_generated_non_1000_all_tierB_vhvl85_fail_20260627.tsv",
+    "pass": "manifests/tierb_sequence_deoverlap_20260627/gaeun_conformer_ensembles_generated_non_1000_all_tierB_vhvl85_pass_20260627.tsv",
+    "scored": "manifests/tierb_sequence_deoverlap_20260627/gaeun_conformer_ensembles_generated_non_1000_all_tierB_vhvl85_scored_20260627.tsv"
+  },
+  "pass_identity_distribution": {
+    "max": 0.848101,
+    "median": 0.7927379999999999,
+    "min": 0.613445,
+    "p25": 0.770517,
+    "p75": 0.818182
+  },
+  "source_scored_manifest": "manifests/tierb_sequence_deoverlap_20260627/gaeun_conformer_ensembles_generated_non_1000_all_tierB_vhvl80_scored_20260627.tsv",
+  "threshold": 0.85,
+  "threshold_label": "vhvl85",
+  "tierb_fail_count": 187,
+  "tierb_pass_count": 172
+}

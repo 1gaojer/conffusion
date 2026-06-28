@@ -1,0 +1,575 @@
+target_id	latest_stage_observed	has_any_generated_output	has_prothunt_output	has_af3_inputs	has_af3_results	has_filtered_af3_models	prothunt_output_dir_count	af3_input_json_count	af3_template_cif_count	af3_result_dir_count	filtered_child_dir_count	filtered_child_file_count	filtered_cif_file_count	filtered_pdb_file_count	filtered_json_file_count	prothunt_roots	prothunt_conf_gen_results_child_dir_count	prothunt_conf_gen_results_child_file_count	prothunt_dataset_root_child_dir_count	prothunt_dataset_root_child_file_count	overlaps_1000_train	overlaps_1000_test	overlaps_1000_all	overlaps_1000_trained_ids	first_seen_mtime_iso	latest_seen_mtime_iso
+1g7l	af3_results	True	True	True	True		1	100	100	100						prothunt_conf_gen_results	0	2097			False	False	False	False	2026-05-08T21:33:14-0400	2026-06-24T20:13:16-0400
+1yyl	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-27T17:39:49-0400	2026-06-27T17:40:00-0400
+2dd8	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T07:16:57-0400	2026-06-24T15:37:48-0400
+2fed	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T08:13:43-0400	2026-06-24T15:42:21-0400
+2fee	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T08:19:47-0400	2026-06-24T15:43:05-0400
+2fjg	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T16:00:49-0400	2026-06-25T23:34:57-0400
+2hfe	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T08:29:58-0400	2026-05-28T08:34:59-0400
+2hvj	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T08:40:44-0400	2026-06-25T17:02:18-0400
+2i5y	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T08:50:56-0400	2026-05-28T08:56:46-0400
+2i60	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T11:46:39-0400	2026-06-24T23:28:00-0400
+2itc	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T08:56:49-0400	2026-06-25T17:15:11-0400
+2itd	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T09:02:20-0400	2026-06-25T17:05:04-0400
+2ny2	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T09:17:16-0400	2026-06-25T17:32:00-0400
+2ny5	af3_results	True	False	True	True			57	57	100											False	False	False	False	2026-05-28T09:23:10-0400	2026-06-25T20:37:51-0400
+2osl	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T09:38:06-0400	2026-05-28T09:49:01-0400
+2p7t	af3_results	True	False	True	True			100	100	25											False	False	False	False	2026-06-25T17:56:34-0400	2026-06-25T23:58:32-0400
+2p8p	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T09:49:06-0400	2026-05-28T09:57:45-0400
+2qr0	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T19:21:47-0400	2026-06-25T19:21:57-0400
+2qsc	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T09:57:49-0400	2026-05-28T10:05:35-0400
+2r9h	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T10:05:40-0400	2026-05-28T10:12:50-0400
+2ybr	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T10:26:32-0400	2026-06-25T19:35:37-0400
+2yc1	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T21:42:09-0400	2026-06-25T21:42:16-0400
+3b2u	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T11:18:22-0400	2026-06-25T02:12:21-0400
+3bgf	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-22T04:20:03-0400	2026-06-25T04:56:36-0400
+3c09	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T22:17:59-0400	2026-06-25T22:18:07-0400
+3fb8	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T11:18:21-0400	2026-05-28T11:23:54-0400
+3hi6	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T22:52:47-0400	2026-06-25T22:52:55-0400
+3idj	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-22T04:20:18-0400	2026-06-25T07:38:46-0400
+3idm	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T01:14:10-0400	2026-06-26T01:14:15-0400
+3idn	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-27T17:10:42-0400	2026-06-27T17:10:49-0400
+3ifn	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T02:36:58-0400	2026-06-26T02:37:05-0400
+3iyw	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-27T17:25:05-0400	2026-06-27T17:25:15-0400
+3j6u	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T14:53:44-0400	2026-06-25T10:45:55-0400
+3j8v	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T23:23:09-0400	2026-06-25T23:23:20-0400
+3ngb	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T11:29:05-0400	2026-05-28T11:37:04-0400
+3ogc	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T01:41:16-0400	2026-06-26T01:41:21-0400
+3or6	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T12:10:25-0400	2026-06-26T00:37:08-0400
+3or7	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T00:37:09-0400	2026-06-26T00:37:14-0400
+3ria	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T00:37:23-0400	2026-06-26T00:37:30-0400
+3rif	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-22T06:35:53-0400	2026-06-25T13:58:03-0400
+3rkd	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T00:37:31-0400	2026-06-26T00:37:37-0400
+3s35	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T00:37:37-0400	2026-06-26T00:37:42-0400
+3skj	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T12:34:43-0400	2026-05-28T12:40:35-0400
+3stl	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T00:37:43-0400	2026-06-26T00:37:47-0400
+3ulv	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T12:46:19-0400	2026-06-27T18:37:23-0400
+3v4u	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-22T04:22:01-0400	2026-06-25T16:38:20-0400
+3v52	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T02:37:14-0400	2026-06-26T02:37:21-0400
+3vg9	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-22T06:45:44-0400	2026-06-25T19:56:52-0400
+3wd5	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T03:08:07-0400	2026-06-26T03:08:13-0400
+3wlw	af3_results	True	False	True	True			100	100	25											False	False	False	False	2026-06-22T06:39:07-0400	2026-06-25T20:38:12-0400
+3wsq	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T02:37:42-0400	2026-06-26T02:37:52-0400
+4dgv	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T13:22:02-0400	2026-05-28T13:31:19-0400
+4ffv	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T04:31:18-0400	2026-06-26T04:31:26-0400
+4ffw	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T06:48:23-0400	2026-06-22T06:48:30-0400
+4ffz	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T13:38:17-0400	2026-06-24T15:32:37-0400
+4g6a	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T04:41:32-0400	2026-06-26T04:41:37-0400
+4g6f	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T05:57:19-0400	2026-06-26T05:57:26-0400
+4gaj	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T08:52:16-0400	2026-06-26T08:52:22-0400
+4ij3	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T06:46:26-0400	2026-06-22T06:46:33-0400
+4j4p	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T07:36:01-0400	2026-06-22T07:36:08-0400
+4jfz	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T06:46:20-0400	2026-06-22T06:46:25-0400
+4jg1	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T05:57:26-0400	2026-06-26T05:57:33-0400
+4jo3	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T13:51:59-0400	2026-05-28T13:57:56-0400
+4lbe	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T05:57:34-0400	2026-06-26T05:57:41-0400
+4lcu	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T14:10:41-0400	2026-06-26T08:16:51-0400
+4m48	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-27T17:26:14-0400	2026-06-27T17:26:25-0400
+4nrx	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T14:16:11-0400	2026-05-28T14:21:40-0400
+4olw	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T08:51:30-0400	2026-06-22T08:51:37-0400
+4om1	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T09:10:41-0400	2026-06-22T09:10:48-0400
+4onf	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T08:39:57-0400	2026-06-22T08:40:02-0400
+4plk	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T08:42:08-0400	2026-06-22T08:42:14-0400
+4q6i	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T09:46:07-0400	2026-06-22T09:46:12-0400
+4rgm	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T09:17:06-0400	2026-06-22T11:08:01-0400
+4ris	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T14:31:09-0400	2026-05-28T14:37:40-0400
+4s1s	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T12:20:33-0400	2026-06-26T12:20:43-0400
+4tnw	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T11:17:51-0400	2026-06-22T11:17:58-0400
+4utb	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T12:40:39-0400	2026-06-22T12:40:47-0400
+4v1d	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T11:17:42-0400	2026-06-22T11:17:47-0400
+4wy7	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-27T19:15:48-0400	2026-06-27T19:15:56-0400
+4xnx	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T08:35:17-0400	2026-06-26T08:35:28-0400
+4xpa	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T15:09:06-0400	2026-06-24T15:42:49-0400
+4xph	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T13:54:59-0400	2026-06-22T13:55:06-0400
+4xx1	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T13:57:56-0400	2026-06-22T13:58:04-0400
+4xzu	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T11:34:32-0400	2026-06-26T11:34:40-0400
+4yxk	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T15:15:30-0400	2026-05-28T15:22:45-0400
+4zff	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T10:18:08-0400	2026-06-26T10:18:15-0400
+4zyp	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T10:18:23-0400	2026-06-26T10:18:35-0400
+5a1z	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T15:15:50-0400	2026-06-22T15:15:58-0400
+5bjz	af3_inputs_only	False	False	True	False			23	23												False	False	False	False	2026-06-26T13:36:56-0400	2026-06-26T13:36:58-0400
+5c7x	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T12:39:44-0400	2026-06-26T12:39:51-0400
+5cez	af3_results	True	False	True	True			100	100	1											False	False	False	False	2026-06-24T19:25:42-0400	2026-06-25T14:22:18-0400
+5d72	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T13:53:00-0400	2026-06-26T13:53:07-0400
+5ebl	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T15:55:25-0400	2026-06-26T12:20:50-0400
+5ggs	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T14:37:25-0400	2026-06-22T14:37:29-0400
+5ggv	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T16:17:02-0400	2026-05-28T16:26:07-0400
+5hhx	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T14:36:54-0400	2026-06-26T14:37:01-0400
+5hi4	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T11:00:48-0400	2026-06-23T11:00:52-0400
+5ies	af3_inputs_only	False	False	True	False			29	29												False	False	False	False	2026-06-26T15:15:18-0400	2026-06-26T15:15:20-0400
+5iq7	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T13:36:59-0400	2026-06-26T13:37:06-0400
+5j9p	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T16:38:29-0400	2026-05-28T16:43:23-0400
+5jw4	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T13:53:08-0400	2026-06-26T13:53:19-0400
+5kvf	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T15:20:34-0400	2026-06-22T15:20:39-0400
+5kvg	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T16:43:26-0400	2026-06-24T15:32:02-0400
+5mp1	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T18:36:30-0400	2026-06-24T18:36:34-0400
+5mp5	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T18:13:52-0400	2026-06-26T18:13:59-0400
+5n09	af3_inputs_only	False	False	True	False			18	18												False	False	False	False	2026-06-26T20:49:16-0400	2026-06-26T20:49:18-0400
+5nuz	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T08:27:51-0400	2026-06-25T08:27:56-0400
+5t3x	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T19:13:34-0400	2026-06-24T19:13:41-0400
+5t3z	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T19:25:55-0400	2026-06-24T19:26:02-0400
+5tkk	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T21:06:59-0400	2026-05-23T20:56:29-0400
+5tz2	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T15:15:21-0400	2026-06-26T15:15:28-0400
+5u3j	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T11:15:52-0400	2026-06-23T11:15:56-0400
+5ucb	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T16:53:47-0400	2026-06-24T15:47:01-0400
+5ugy	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T17:53:13-0400	2026-06-22T17:53:19-0400
+5uhy	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T08:46:33-0400	2026-06-25T08:46:39-0400
+5umn	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T15:15:38-0400	2026-06-26T15:15:49-0400
+5v2a	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T15:53:43-0400	2026-06-25T15:53:49-0400
+5vke	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T17:13:08-0400	2026-05-28T17:18:15-0400
+5vkh	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T15:59:47-0400	2026-06-26T15:59:54-0400
+5vph	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T17:41:48-0400	2026-06-22T17:41:55-0400
+5w0k	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T15:59:55-0400	2026-06-26T16:00:06-0400
+5wna	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T17:18:18-0400	2026-05-28T17:23:47-0400
+5xwd	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T08:59:07-0400	2026-06-25T08:59:13-0400
+5yoy	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T08:27:56-0400	2026-06-25T08:28:01-0400
+6a3w	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T18:42:02-0400	2026-06-26T18:42:08-0400
+6aq7	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T17:29:51-0400	2026-05-28T17:35:51-0400
+6aru	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T18:58:07-0400	2026-06-26T18:58:18-0400
+6awq	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T17:36:00-0400	2026-05-28T17:41:50-0400
+6b0s	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T18:58:18-0400	2026-06-26T18:58:25-0400
+6bah	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T17:53:47-0400	2026-05-28T17:59:14-0400
+6bf7	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T18:58:41-0400	2026-06-26T18:58:51-0400
+6bli	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T18:58:52-0400	2026-06-26T18:58:58-0400
+6by2	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T18:58:59-0400	2026-06-26T18:59:05-0400
+6bzv	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T08:28:01-0400	2026-06-25T08:28:05-0400
+6c6y	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T17:59:17-0400	2026-06-26T18:59:16-0400
+6cmg	af3_inputs_only	False	False	True	False			45	45												False	False	False	False	2026-06-22T17:29:20-0400	2026-06-22T17:29:23-0400
+6d0u	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T20:49:18-0400	2026-06-26T20:49:26-0400
+6flb	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T20:49:27-0400	2026-06-26T20:49:32-0400
+6glx	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T18:11:11-0400	2026-06-22T18:11:16-0400
+6iek	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T10:39:49-0400	2026-06-25T10:39:56-0400
+6iuv	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T18:05:16-0400	2026-05-28T18:11:16-0400
+6jhr	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T20:49:51-0400	2026-06-26T20:49:59-0400
+6jht	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T20:49:59-0400	2026-06-26T20:50:07-0400
+6k5f	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T20:50:07-0400	2026-06-26T20:50:15-0400
+6l62	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T18:52:44-0400	2026-05-28T18:58:47-0400
+6m0f	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T20:18:03-0400	2026-06-22T20:18:10-0400
+6m2r	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T20:43:47-0400	2026-06-22T20:43:54-0400
+6m3z	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T20:50:15-0400	2026-06-26T20:50:24-0400
+6n5b	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T19:09:27-0400	2026-05-28T19:16:30-0400
+6n5e	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T10:49:15-0400	2026-06-25T10:49:21-0400
+6nfu	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T17:22:13-0400	2026-06-26T17:22:19-0400
+6nfv	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T17:45:05-0400	2026-06-26T17:45:10-0400
+6niu	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-22T23:04:34-0400	2026-06-22T23:04:42-0400
+6nmr	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T15:44:23-0400	2026-06-25T15:44:27-0400
+6nmt	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T08:46:51-0400	2026-06-25T08:46:56-0400
+6nmu	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T17:43:06-0400	2026-06-26T17:43:12-0400
+6o28	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T18:43:38-0400	2026-06-26T18:43:44-0400
+6o3j	af3_results	True	False	True	True			100	100	44											False	False	False	False	2026-06-25T15:51:42-0400	2026-06-25T23:37:25-0400
+6o42	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T15:25:03-0400	2026-06-26T01:12:46-0400
+6oc3	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-22T23:05:25-0400	2026-06-26T02:53:44-0400
+6ocb	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T19:41:00-0400	2026-06-26T19:41:09-0400
+6ohg	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-22T23:12:23-0400	2026-06-26T04:31:24-0400
+6p60	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T21:57:50-0400	2026-05-23T22:33:29-0400
+6pa0	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T19:30:47-0400	2026-06-26T20:09:58-0400
+6pec	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T21:29:01-0400	2026-05-24T00:09:23-0400
+6phd	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T08:47:18-0400	2026-06-26T06:09:02-0400
+6qb6	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T22:19:26-0400	2026-06-19T07:30:36-0400
+6snc	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T00:28:15-0400	2026-06-26T07:44:52-0400
+6suz	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T20:54:52-0400	2026-06-26T20:54:57-0400
+6u2f	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T01:38:05-0400	2026-06-26T11:06:32-0400
+6u3i	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-26T21:46:15-0400	2026-06-26T21:46:24-0400
+6udk	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T16:02:04-0400	2026-06-26T13:17:30-0400
+6um7	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T19:49:41-0400	2026-06-27T16:43:16-0400
+6urm	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T01:24:55-0400	2026-06-26T14:57:46-0400
+6v6w	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-27T16:25:38-0400	2026-06-27T16:25:44-0400
+6vja	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T19:56:15-0400	2026-05-28T20:02:32-0400
+6vmj	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T22:04:12-0400	2026-06-14T12:40:11-0400
+6vmk	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T15:53:30-0400	2026-06-26T16:37:36-0400
+6vrh	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T00:31:37-0400	2026-06-19T08:16:19-0400
+6w05	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T01:13:05-0400	2026-06-26T18:12:57-0400
+6w2b	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T20:02:35-0400	2026-05-28T20:08:39-0400
+6wir	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T20:08:42-0400	2026-05-28T20:13:58-0400
+6wiz	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T02:45:07-0400	2026-06-26T19:58:06-0400
+6wwc	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-18T22:47:08-0400	2026-06-06T18:29:27-0400
+6x3s	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T20:14:02-0400	2026-05-28T20:20:15-0400
+6x3w	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T20:20:19-0400	2026-05-28T20:26:05-0400
+6x87	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T20:26:09-0400	2026-05-28T20:32:04-0400
+6xc2	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-27T16:36:53-0400	2026-06-27T16:37:00-0400
+6xpy	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T03:07:44-0400	2026-06-26T21:59:28-0400
+6xq0	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T01:29:37-0400	2026-06-06T21:49:42-0400
+6xsk	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T20:38:26-0400	2026-05-28T20:44:46-0400
+6xy2	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T00:41:29-0400	2026-06-19T08:57:38-0400
+6z2m	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T01:57:27-0400	2026-05-24T02:06:19-0400
+6zfo	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T01:02:38-0400	2026-05-24T03:47:53-0400
+7b0b	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T01:50:42-0400	2026-05-24T05:30:07-0400
+7bua	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T03:06:00-0400	2026-05-24T09:13:35-0400
+7c2s	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T20:45:49-0400	2026-05-28T20:51:46-0400
+7cbp	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T04:27:05-0400	2026-06-27T03:03:52-0400
+7cdi	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T14:28:20-0400	2026-06-27T04:41:22-0400
+7cdj	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T05:03:07-0400	2026-06-27T06:20:10-0400
+7chy	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T02:58:27-0400	2026-05-24T10:53:22-0400
+7cwo	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T03:47:29-0400	2026-05-24T14:18:18-0400
+7cwt	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T06:28:06-0400	2026-06-27T09:47:56-0400
+7cyh	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T06:17:06-0400	2026-06-27T11:26:18-0400
+7czt	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T06:30:59-0400	2026-05-24T16:31:15-0400
+7czv	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T07:54:41-0400	2026-05-24T18:47:03-0400
+7dk0	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T06:58:40-0400	2026-05-24T16:38:29-0400
+7dnk	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T20:51:49-0400	2026-05-28T20:57:27-0400
+7dq7	af3_results	True	False	True	True			89	89	89											False	False	False	False	2026-06-23T08:40:58-0400	2026-06-27T17:18:44-0400
+7dx4	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T08:43:38-0400	2026-05-24T18:19:14-0400
+7e3b	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T09:41:43-0400	2026-06-19T09:35:23-0400
+7e5s	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T09:14:44-0400	2026-06-27T19:08:16-0400
+7e9b	af3_results	True	False	True	True			100	100	53											False	False	False	False	2026-06-23T08:15:07-0400	2026-06-27T19:57:23-0400
+7ejy	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T08:41:16-0400	2026-06-23T08:41:22-0400
+7ejz	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T09:58:14-0400	2026-06-23T09:58:20-0400
+7ey5	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T20:57:30-0400	2026-05-28T21:03:44-0400
+7eya	af3_results	True	False	True	True			100	100	78											False	False	False	False	2026-06-20T14:25:29-0400	2026-06-26T04:38:23-0400
+7ezv	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T17:10:45-0400	2026-06-26T06:17:14-0400
+7f6y	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T10:57:45-0400	2026-06-26T07:55:04-0400
+7f6z	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T10:39:50-0400	2026-06-16T13:58:29-0400
+7fae	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T14:52:26-0400	2026-06-26T10:01:02-0400
+7fah	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T11:13:18-0400	2026-06-26T11:41:31-0400
+7fci	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T21:03:47-0400	2026-05-28T21:09:23-0400
+7fcp	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T10:19:15-0400	2026-06-19T09:44:17-0400
+7jie	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T12:17:52-0400	2026-06-26T13:47:14-0400
+7jmo	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T11:12:54-0400	2026-06-16T14:07:28-0400
+7jmw	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T11:43:05-0400	2026-06-13T21:06:22-0400
+7k37	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T10:57:31-0400	2026-06-26T15:44:38-0400
+7k43	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T17:01:12-0400	2026-06-26T17:37:36-0400
+7k45	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T17:25:16-0400	2026-06-26T19:16:18-0400
+7k8m	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T12:15:13-0400	2026-06-13T22:45:22-0400
+7k9i	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T14:07:30-0400	2026-06-08T05:18:30-0400
+7kde	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T17:34:01-0400	2026-06-26T21:18:04-0400
+7kez	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T13:47:25-0400	2026-06-08T06:53:38-0400
+7kf0	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T14:16:12-0400	2026-06-08T08:29:02-0400
+7kmg	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T15:54:24-0400	2026-06-08T13:27:49-0400
+7kmh	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T16:40:30-0400	2026-06-14T00:24:28-0400
+7kn3	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T18:30:59-0400	2026-06-14T09:45:33-0400
+7l0n	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T10:54:59-0400	2026-06-26T22:56:37-0400
+7lex	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T12:08:41-0400	2026-06-27T00:57:09-0400
+7ljr	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T17:09:08-0400	2026-06-27T01:18:21-0400
+7lm8	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T11:46:26-0400	2026-06-25T20:54:08-0400
+7lop	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T13:36:59-0400	2026-06-26T00:12:59-0400
+7lq7	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T14:52:34-0400	2026-06-26T01:52:17-0400
+7luc	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T14:22:52-0400	2026-06-26T03:46:28-0400
+7lwd	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T14:46:43-0400	2026-06-26T05:35:28-0400
+7m2i	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T21:26:12-0400	2026-05-28T21:31:19-0400
+7m52	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T21:31:22-0400	2026-05-28T21:36:54-0400
+7m6f	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T17:56:01-0400	2026-06-26T07:41:08-0400
+7m6h	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T17:57:12-0400	2026-06-26T09:43:35-0400
+7m7w	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T12:25:04-0400	2026-06-26T11:22:33-0400
+7mdp	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T21:36:57-0400	2026-06-24T16:01:33-0400
+7mmo	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T01:51:15-0400	2026-06-19T10:17:53-0400
+7msq	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T03:19:34-0400	2026-06-14T02:04:07-0400
+7mxl	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T02:57:50-0400	2026-06-07T02:58:45-0400
+7mzf	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T04:01:11-0400	2026-06-07T05:44:26-0400
+7mzg	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T05:30:42-0400	2026-06-07T08:30:40-0400
+7mzi	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T04:17:05-0400	2026-06-19T11:00:32-0400
+7mzk	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T05:53:53-0400	2026-06-19T11:31:24-0400
+7mzm	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T20:13:49-0400	2026-06-26T14:38:02-0400
+7n0v	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T06:21:23-0400	2026-06-16T15:45:25-0400
+7n3c	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T21:49:08-0400	2026-05-28T21:54:28-0400
+7n4m	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T06:36:33-0400	2026-06-19T12:20:17-0400
+7n62	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T20:03:02-0400	2026-06-26T16:40:42-0400
+7nd3	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T20:15:14-0400	2026-06-26T18:21:40-0400
+7nd4	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T21:20:17-0400	2026-06-26T20:31:48-0400
+7nd6	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T08:20:11-0400	2026-06-16T17:39:40-0400
+7nd7	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T20:49:40-0400	2026-06-26T22:36:50-0400
+7neg	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T09:34:28-0400	2026-06-19T13:07:33-0400
+7neh	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T10:00:09-0400	2026-06-19T13:27:21-0400
+7ora	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T10:29:35-0400	2026-06-19T14:18:57-0400
+7p40	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T11:21:27-0400	2026-06-18T10:59:59-0400
+7phg	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T12:14:32-0400	2026-06-18T04:37:00-0400
+7pry	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T13:36:47-0400	2026-06-18T06:15:46-0400
+7prz	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T13:38:56-0400	2026-06-16T20:58:54-0400
+7ps0	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T23:32:23-0400	2026-06-27T00:16:15-0400
+7ps1	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T15:12:06-0400	2026-06-18T07:14:42-0400
+7ps4	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T10:50:10-0400	2026-06-27T01:54:25-0400
+7ps6	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T14:53:58-0400	2026-06-16T22:37:57-0400
+7ps7	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T14:53:51-0400	2026-06-19T14:56:34-0400
+7q0g	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T15:36:16-0400	2026-06-17T00:17:35-0400
+7q0h	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T16:00:51-0400	2026-06-17T01:56:59-0400
+7qez	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-27T16:41:20-0400	2026-06-27T16:41:28-0400
+7qf0	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T18:08:30-0400	2026-06-17T18:57:57-0400
+7qnx	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T11:57:27-0400	2026-06-17T03:36:06-0400
+7qtj	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T18:40:02-0400	2026-06-17T20:27:20-0400
+7qtk	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T21:54:51-0400	2026-05-28T22:00:53-0400
+7r6w	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T18:23:29-0400	2026-06-17T05:16:13-0400
+7r6x	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T22:42:30-0400	2026-06-27T03:33:46-0400
+7r8o	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T22:59:11-0400	2026-06-27T05:34:51-0400
+7rbu	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T17:01:40-0400	2026-06-27T07:32:08-0400
+7rcs	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T17:59:34-0400	2026-06-17T21:47:52-0400
+7rd4	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T19:10:10-0400	2026-06-17T23:23:11-0400
+7rd9	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T19:51:45-0400	2026-06-18T00:12:42-0400
+7rda	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T20:27:27-0400	2026-06-18T01:03:35-0400
+7rp3	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T20:51:33-0400	2026-06-18T02:53:18-0400
+7rr0	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T20:52:49-0400	2026-06-17T06:55:46-0400
+7rxj	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T21:58:03-0400	2026-06-18T04:32:18-0400
+7rxl	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T22:41:30-0400	2026-06-19T15:36:16-0400
+7s0b	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T00:05:48-0400	2026-06-18T05:17:49-0400
+7s4s	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T23:34:37-0400	2026-06-18T06:10:29-0400
+7s5p	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T00:31:59-0400	2026-06-18T07:03:08-0400
+7s5q	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T00:25:52-0400	2026-06-18T07:44:35-0400
+7s5r	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T01:13:21-0400	2026-06-18T08:18:42-0400
+7sbu	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T02:17:49-0400	2026-06-18T09:10:14-0400
+7sc1	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T23:37:01-0400	2026-06-27T09:25:36-0400
+7sfv	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T16:56:51-0400	2026-06-27T11:18:08-0400
+7sfw	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T02:56:34-0400	2026-06-12T01:07:02-0400
+7si2	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T23:37:19-0400	2026-06-27T12:56:41-0400
+7str	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T16:30:00-0400	2026-06-27T14:32:59-0400
+7swo	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-21T01:25:05-0400	2026-06-27T16:10:45-0400
+7t7b	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T01:26:37-0400	2026-06-08T02:23:01-0400
+7tas	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-21T01:57:26-0400	2026-06-27T17:49:19-0400
+7tb8	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T03:40:07-0400	2026-06-18T10:17:23-0400
+7tbf	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T02:55:44-0400	2026-06-18T11:10:00-0400
+7tca	af3_results	True	False	True	True			100	100	98											False	False	False	False	2026-06-23T17:36:03-0400	2026-06-27T19:57:43-0400
+7tcc	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T04:39:20-0400	2026-06-18T12:09:06-0400
+7tct	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T03:44:48-0400	2026-06-08T11:35:35-0400
+7td8	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T04:27:15-0400	2026-06-08T13:36:31-0400
+7tdm	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T22:06:18-0400	2026-05-28T22:11:47-0400
+7the	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T05:39:58-0400	2026-06-08T15:18:39-0400
+7tho	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T06:09:27-0400	2026-06-08T17:13:52-0400
+7tmz	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T06:22:43-0400	2026-06-08T19:05:36-0400
+7tp3	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T06:58:13-0400	2026-06-08T20:47:49-0400
+7tp4	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T07:41:03-0400	2026-06-10T03:22:08-0400
+7tpd	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T08:22:48-0400	2026-06-10T05:11:25-0400
+7txt	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T09:05:14-0400	2026-06-17T12:10:23-0400
+7txz	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T11:13:33-0400	2026-06-19T16:30:25-0400
+7u0p	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T17:59:01-0400	2026-06-23T17:59:09-0400
+7u0q	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T10:01:51-0400	2026-06-10T07:01:08-0400
+7u2e	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T18:45:46-0400	2026-06-23T18:45:52-0400
+7u60	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T09:55:18-0400	2026-06-10T10:24:03-0400
+7u8e	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T11:18:12-0400	2026-06-18T13:00:28-0400
+7u9f	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T12:21:58-0400	2026-06-10T12:08:16-0400
+7u9v	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T12:40:03-0400	2026-06-10T14:00:48-0400
+7ubr	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T13:20:05-0400	2026-06-10T16:01:04-0400
+7ucy	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T13:31:29-0400	2026-06-10T17:45:52-0400
+7udg	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T14:21:40-0400	2026-06-10T19:38:03-0400
+7udh	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T14:28:44-0400	2026-06-10T21:34:17-0400
+7ue0	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T15:12:42-0400	2026-06-10T23:18:39-0400
+7ufh	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T15:28:48-0400	2026-06-11T01:10:59-0400
+7ufo	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T15:47:22-0400	2026-06-18T13:49:57-0400
+7uh8	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T16:23:50-0400	2026-06-18T15:13:41-0400
+7uje	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T17:45:28-0400	2026-06-18T16:21:20-0400
+7ujk	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T17:57:24-0400	2026-06-18T17:13:07-0400
+7uk9	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T18:42:22-0400	2026-06-18T18:08:39-0400
+7uko	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T18:44:00-0400	2026-06-18T19:11:07-0400
+7ukp	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T19:00:47-0400	2026-06-19T23:21:25-0400
+7ukt	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T19:45:09-0400	2026-06-17T14:34:47-0400
+7ul0	af3_results	True	False	True	True			91	91	91											False	False	False	False	2026-05-21T22:09:33-0400	2026-06-17T16:05:05-0400
+7ul1	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T21:02:07-0400	2026-06-08T05:11:41-0400
+7unb	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T22:04:52-0400	2026-06-17T17:41:27-0400
+7uop	af3_results	True	False	True	True			100	100	79											False	False	False	False	2026-06-21T02:09:26-0400	2026-06-27T02:46:30-0400
+7uow	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T19:40:51-0400	2026-06-27T04:35:08-0400
+7upk	af3_results	True	False	True	True			60	60	60											False	False	False	False	2026-05-22T00:12:21-0400	2026-06-17T18:54:10-0400
+7upx	af3_results	True	False	True	True			18	18	18											False	False	False	False	2026-05-21T22:27:35-0400	2026-06-08T07:38:59-0400
+7ur4	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T00:55:41-0400	2026-06-08T09:44:01-0400
+7urq	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T01:21:57-0400	2026-06-17T20:33:46-0400
+7uvq	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T01:37:33-0400	2026-06-08T11:23:31-0400
+7uvs	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T02:28:55-0400	2026-06-17T22:12:18-0400
+7uym	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T18:49:19-0400	2026-06-27T06:09:41-0400
+7uz7	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-21T02:15:26-0400	2026-06-27T07:59:27-0400
+7uzc	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T03:14:53-0400	2026-06-17T23:52:00-0400
+7v27	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T04:36:08-0400	2026-06-20T00:49:28-0400
+7v64	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T04:53:23-0400	2026-06-19T17:11:55-0400
+7vgs	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T05:58:37-0400	2026-06-08T13:04:32-0400
+7vyr	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-21T01:55:19-0400	2026-06-27T09:37:52-0400
+7vyt	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T19:27:40-0400	2026-06-27T11:12:47-0400
+7vzt	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T05:52:32-0400	2026-06-17T15:25:01-0400
+7w9f	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T07:47:29-0400	2026-06-08T14:46:03-0400
+7wbz	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T08:30:54-0400	2026-06-08T18:09:24-0400
+7wck	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T09:01:31-0400	2026-06-20T02:28:37-0400
+7wcr	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T10:18:36-0400	2026-06-08T19:51:24-0400
+7wcu	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T08:46:26-0400	2026-06-18T01:30:20-0400
+7wcz	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-21T04:05:25-0400	2026-06-27T13:13:40-0400
+7wd0	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-21T04:32:53-0400	2026-06-27T14:59:12-0400
+7wd7	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-21T04:35:06-0400	2026-06-27T16:48:41-0400
+7we7	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T11:19:31-0400	2026-06-08T21:42:45-0400
+7we9	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T12:01:44-0400	2026-06-17T17:37:13-0400
+7wee	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T15:26:42-0400	2026-06-18T03:09:53-0400
+7wef	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T14:48:16-0400	2026-06-19T17:30:43-0400
+7wgd	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T13:48:10-0400	2026-06-19T18:09:48-0400
+7wgt	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T15:31:17-0400	2026-06-19T18:57:56-0400
+7whb	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T14:41:09-0400	2026-06-18T03:46:19-0400
+7whd	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T15:28:02-0400	2026-06-18T05:31:19-0400
+7wi0	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T17:01:00-0400	2026-06-18T07:09:59-0400
+7wlc	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T19:27:52-0400	2026-06-18T08:49:20-0400
+7wlw	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T20:18:33-0400	2026-06-19T19:50:31-0400
+7wn2	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T18:59:18-0400	2026-06-18T10:28:15-0400
+7wnb	af3_results	True	False	True	True			74	74	74											False	False	False	False	2026-06-23T19:51:49-0400	2026-06-27T18:01:37-0400
+7woa	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T18:53:02-0400	2026-06-20T04:08:45-0400
+7wob	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T20:11:37-0400	2026-06-20T06:10:44-0400
+7woc	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-21T04:31:31-0400	2026-06-27T19:41:21-0400
+7wog	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T20:27:37-0400	2026-06-14T09:31:31-0400
+7won	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1936			False	False	False	False	2026-05-31T01:13:05-0400	2026-06-24T16:23:23-0400
+7wp1	af3_results	True	False	True	True			100	100	17											False	False	False	False	2026-06-21T04:34:44-0400	2026-06-27T19:57:13-0400
+7wro	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T20:32:56-0400	2026-06-23T20:33:01-0400
+7wrz	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T20:52:12-0400	2026-06-23T20:52:18-0400
+7ws2	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T21:15:13-0400	2026-06-23T21:15:20-0400
+7wt9	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	2106			False	False	False	False	2026-05-31T03:43:44-0400	2026-06-24T16:24:19-0400
+7wue	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T06:23:00-0400	2026-06-21T06:23:06-0400
+7wvl	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T21:35:10-0400	2026-06-23T21:35:16-0400
+7wwk	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T06:48:05-0400	2026-06-21T06:48:13-0400
+7x8w	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T06:51:34-0400	2026-06-21T06:51:42-0400
+7x90	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T06:49:42-0400	2026-06-21T06:49:48-0400
+7x92	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T07:00:39-0400	2026-06-21T07:00:46-0400
+7x94	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	2121			False	False	False	False	2026-06-18T11:59:53-0400	2026-06-24T16:24:09-0400
+7x95	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1817			False	False	False	False	2026-06-18T12:09:49-0400	2026-06-24T16:22:33-0400
+7x96	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1963			False	False	False	False	2026-06-18T12:27:35-0400	2026-06-24T16:23:59-0400
+7xcz	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1730			False	False	False	False	2026-06-18T12:23:02-0400	2026-06-24T16:30:51-0400
+7xda	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1899			False	False	False	False	2026-06-18T14:23:43-0400	2026-06-24T16:41:37-0400
+7xik	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T08:30:18-0400	2026-06-21T08:30:25-0400
+7xil	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T09:00:26-0400	2026-06-21T09:00:34-0400
+7y3o	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T22:15:12-0400	2026-06-23T22:15:19-0400
+7yad	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T09:05:25-0400	2026-06-21T09:05:33-0400
+7yck	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T09:07:09-0400	2026-06-21T09:07:16-0400
+7ycn	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T09:13:48-0400	2026-06-21T09:13:54-0400
+7ydi	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T11:01:12-0400	2026-06-21T11:01:21-0400
+7ye9	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T11:36:25-0400	2026-06-21T11:36:33-0400
+7yeg	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T11:36:36-0400	2026-06-21T11:36:43-0400
+7yow	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T10:53:08-0400	2026-06-25T10:53:14-0400
+7ytn	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T11:17:05-0400	2026-06-21T11:17:11-0400
+7yvh	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T11:28:33-0400	2026-06-21T11:28:39-0400
+7yvi	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T13:51:50-0400	2026-06-21T13:52:00-0400
+7yvj	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T13:43:53-0400	2026-06-21T13:44:02-0400
+7yvo	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T14:10:39-0400	2026-06-21T14:10:47-0400
+7z0y	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T13:59:35-0400	2026-06-21T13:59:45-0400
+7zf9	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T22:50:15-0400	2026-06-23T22:50:21-0400
+7zr7	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T14:32:59-0400	2026-06-21T14:33:07-0400
+8av9	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T15:47:23-0400	2026-06-21T15:47:31-0400
+8awm	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T16:24:18-0400	2026-06-21T16:24:27-0400
+8cbe	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T16:19:39-0400	2026-06-21T16:19:46-0400
+8cbf	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T16:32:19-0400	2026-06-21T16:32:26-0400
+8cwv	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T00:16:45-0400	2026-06-24T00:16:52-0400
+8cxi	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T17:30:35-0400	2026-06-21T17:30:44-0400
+8dad	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-23T23:29:00-0400	2026-06-23T23:29:06-0400
+8dtk	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T00:06:31-0400	2026-06-24T00:06:38-0400
+8dv6	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T18:46:57-0400	2026-06-21T18:47:05-0400
+8dwx	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T00:47:44-0400	2026-06-24T00:47:52-0400
+8dyx	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T17:44:19-0400	2026-06-25T17:44:24-0400
+8edf	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T19:02:30-0400	2026-06-21T19:02:40-0400
+8eh5	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T00:53:47-0400	2026-06-24T00:53:52-0400
+8elj	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T19:13:02-0400	2026-06-21T19:13:13-0400
+8elq	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T02:09:02-0400	2026-06-24T02:09:09-0400
+8eoo	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T02:16:17-0400	2026-06-24T02:16:24-0400
+8f2j	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T18:56:41-0400	2026-06-21T18:56:48-0400
+8f2x	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T18:36:49-0400	2026-06-21T18:36:56-0400
+8f38	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T19:34:02-0400	2026-06-21T19:34:10-0400
+8f95	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T02:05:29-0400	2026-06-24T02:05:34-0400
+8f9e	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T02:38:35-0400	2026-06-24T02:38:40-0400
+8f9v	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T02:39:42-0400	2026-06-24T02:39:47-0400
+8fhy	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T19:30:14-0400	2026-06-21T19:30:21-0400
+8fr6	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-21T19:57:07-0400	2026-06-21T19:57:16-0400
+8g85	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T04:34:43-0400	2026-06-24T04:34:50-0400
+8gtp	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T04:46:10-0400	2026-06-24T04:46:17-0400
+8h00	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T04:57:04-0400	2026-06-24T04:57:11-0400
+8h01	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T05:16:20-0400	2026-06-24T05:16:27-0400
+8hc2	af3_inputs_only	False	False	True	False			42	42												False	False	False	False	2026-06-24T05:15:44-0400	2026-06-24T05:15:47-0400
+8hc3	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T07:11:28-0400	2026-06-24T07:11:35-0400
+8hc6	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T12:45:20-0400	2026-06-25T12:45:27-0400
+8hpf	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T07:07:16-0400	2026-06-24T07:07:23-0400
+8hpu	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T07:15:13-0400	2026-06-24T07:15:19-0400
+8hws	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T07:34:31-0400	2026-06-24T07:34:37-0400
+8hwt	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T07:36:41-0400	2026-06-24T07:36:48-0400
+8i5h	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T07:07:23-0400	2026-06-24T07:07:29-0400
+8itu	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T09:45:26-0400	2026-06-24T09:45:34-0400
+8jeo	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T09:04:45-0400	2026-06-24T09:04:50-0400
+8jqm	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T09:52:14-0400	2026-06-24T09:52:22-0400
+8k19	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T09:56:58-0400	2026-06-24T09:57:04-0400
+8kdi	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T22:11:51-0400	2026-05-28T22:17:33-0400
+8ker	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T10:20:32-0400	2026-06-24T10:20:39-0400
+8kfa	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T11:42:58-0400	2026-06-24T11:43:06-0400
+8r4n	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T11:37:52-0400	2026-06-24T11:37:57-0400
+8rh0	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T12:22:52-0400	2026-06-24T12:22:59-0400
+8rh2	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T12:43:03-0400	2026-06-24T12:43:11-0400
+8rp8	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T12:12:37-0400	2026-06-24T12:12:42-0400
+8rpb	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T13:57:05-0400	2026-06-24T13:57:09-0400
+8sas	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T14:33:27-0400	2026-06-24T14:33:35-0400
+8sdh	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T17:43:01-0400	2026-06-25T17:43:07-0400
+8sxj	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T16:28:51-0400	2026-06-24T16:28:59-0400
+8t4b	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T18:35:45-0400	2026-06-25T18:35:49-0400
+8tkc	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T15:18:27-0400	2026-06-24T15:18:34-0400
+8tmh	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T16:09:53-0400	2026-06-24T16:10:01-0400
+8tmk	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T17:11:33-0400	2026-06-24T17:11:41-0400
+8tp4	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T17:28:27-0400	2026-06-24T17:28:35-0400
+8tp7	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T18:05:18-0400	2026-06-24T18:05:26-0400
+8tuz	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T18:56:52-0400	2026-06-24T18:57:00-0400
+8udr	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T19:34:02-0400	2026-06-24T19:34:09-0400
+8v7o	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T19:57:07-0400	2026-06-24T19:57:15-0400
+8vee	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T10:57:50-0400	2026-06-25T10:57:57-0400
+8vgn	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T21:03:15-0400	2026-06-24T21:03:20-0400
+8vuq	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T21:55:28-0400	2026-06-24T21:55:35-0400
+8vur	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T22:09:50-0400	2026-06-24T22:09:58-0400
+8w5q	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T22:07:00-0400	2026-06-24T22:07:08-0400
+8xef	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T22:06:49-0400	2026-06-24T22:06:55-0400
+8xrq	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T19:00:00-0400	2026-06-25T19:00:05-0400
+8xsf	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T22:25:24-0400	2026-06-04T19:19:22-0400
+8y3h	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T19:22:53-0400	2026-06-25T19:23:00-0400
+8y4a	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-24T23:39:00-0400	2026-06-24T23:39:06-0400
+8yvn	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T23:18:48-0400	2026-06-04T19:56:13-0400
+8zpp	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T00:25:24-0400	2026-06-25T00:25:31-0400
+8zyf	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T00:28:23-0400	2026-06-25T00:28:30-0400
+9azr	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T01:59:01-0400	2026-06-25T01:59:07-0400
+9b82	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T02:41:22-0400	2026-06-25T02:41:29-0400
+9c7f	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T02:20:10-0400	2026-06-25T02:20:16-0400
+9ccw	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T17:07:33-0400	2026-06-19T22:22:32-0400
+9cps	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T04:00:12-0400	2026-06-25T04:00:18-0400
+9cpy	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T17:53:26-0400	2026-06-04T20:00:00-0400
+9ctu	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T18:09:57-0400	2026-05-29T18:15:30-0400
+9cyi	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T18:27:20-0400	2026-06-04T20:11:39-0400
+9dpe	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T19:09:07-0400	2026-05-29T19:14:57-0400
+9eup	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T12:49:02-0400	2026-06-25T12:49:08-0400
+9fnt	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1969			False	False	False	False	2026-06-18T21:20:15-0400	2026-06-24T16:58:16-0400
+9fys	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T19:09:56-0400	2026-06-25T19:10:00-0400
+9ggp	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T20:07:01-0400	2026-05-29T20:13:11-0400
+9gu0	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T20:24:39-0400	2026-05-29T20:30:46-0400
+9h4r	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T20:42:13-0400	2026-05-29T20:47:39-0400
+9h6u	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1946			False	False	False	False	2026-06-18T21:36:50-0400	2026-06-24T17:11:46-0400
+9hk1	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T20:52:56-0400	2026-05-29T20:57:59-0400
+9ind	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T21:04:19-0400	2026-05-29T21:09:44-0400
+9iw2	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T21:15:59-0400	2026-05-29T21:21:50-0400
+9j82	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T21:27:52-0400	2026-05-29T21:33:18-0400
+9jbq	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T21:38:42-0400	2026-05-29T21:49:46-0400
+9jie	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T21:56:04-0400	2026-05-29T22:01:16-0400
+9jif	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T22:01:19-0400	2026-06-04T20:00:48-0400
+9jij	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T22:07:12-0400	2026-06-04T20:01:11-0400
+9jim	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T22:12:59-0400	2026-06-19T22:53:37-0400
+9jio	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-29T22:24:10-0400	2026-06-25T12:37:42-0400
+9jq6	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T22:36:09-0400	2026-06-04T20:20:20-0400
+9jqu	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T22:42:18-0400	2026-06-04T20:32:05-0400
+9jqv	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T22:48:03-0400	2026-05-29T22:53:18-0400
+9js4	af3_inputs_only	False	False	True	False			100	100												False	False	False	False	2026-06-25T12:25:10-0400	2026-06-25T12:25:16-0400
+9jzq	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T22:59:38-0400	2026-05-29T23:05:09-0400
+9kod	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T23:11:09-0400	2026-05-29T23:17:02-0400
+9kve	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T23:23:27-0400	2026-06-04T20:27:53-0400
+9l1s	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T23:34:32-0400	2026-05-29T23:40:57-0400
+9l6c	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1860			False	False	False	False	2026-06-20T10:53:03-0400	2026-06-24T17:36:39-0400
+9lae	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T23:41:00-0400	2026-06-04T20:27:15-0400
+9lbs	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T23:46:33-0400	2026-06-04T20:27:45-0400
+9lyp	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1662			False	False	False	False	2026-06-20T10:59:35-0400	2026-06-24T17:43:35-0400
+9m7v	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T23:58:13-0400	2026-05-30T00:04:08-0400
+9md3	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T00:10:22-0400	2026-05-30T00:16:17-0400
+9md4	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-30T00:16:20-0400	2026-06-04T20:34:00-0400
+9md5	filtered_af3_models	True	False	True	True	True		37	37	100	37	0	0	0	0						False	False	False	False	2026-05-30T00:22:14-0400	2026-06-04T20:17:31-0400
+9md6	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-30T00:28:00-0400	2026-06-06T17:25:05-0400
+9me4	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T00:33:37-0400	2026-05-30T00:39:42-0400
+9mer	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T00:45:36-0400	2026-05-30T00:51:19-0400
+9mew	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T00:51:22-0400	2026-05-30T00:56:40-0400
+9mic	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	2250			False	False	False	False	2026-06-20T10:50:55-0400	2026-06-24T18:04:50-0400
+9mif	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-30T01:02:45-0400	2026-06-04T20:32:52-0400
+9ml1	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T01:08:20-0400	2026-05-30T01:14:12-0400
+9ml4	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1856			False	False	False	False	2026-06-19T01:03:29-0400	2026-06-24T18:11:25-0400
+9ml6	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	2155			False	False	False	False	2026-06-20T11:17:28-0400	2026-06-24T18:20:54-0400
+9ml8	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-30T01:14:15-0400	2026-06-04T20:38:02-0400
+9ml9	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	2081			False	False	False	False	2026-06-19T01:21:03-0400	2026-06-24T18:19:21-0400
+9mla	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T01:19:57-0400	2026-05-30T01:25:38-0400
+9mq7	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T01:31:37-0400	2026-05-30T01:37:40-0400
+9mqa	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-30T01:37:43-0400	2026-06-04T20:40:24-0400
+9msn	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T01:49:32-0400	2026-05-30T01:55:13-0400
+9n0d	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T02:01:08-0400	2026-05-30T02:07:37-0400
+9njy	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T02:13:24-0400	2026-05-30T02:19:27-0400
+9nph	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T02:25:07-0400	2026-05-30T02:30:40-0400
+9o4n	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-30T02:30:43-0400	2026-06-04T20:41:42-0400
+9o4o	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	2128			False	False	False	False	2026-06-19T01:38:42-0400	2026-06-24T18:26:36-0400
+9o4p	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-30T02:36:46-0400	2026-06-04T20:41:51-0400
+9o4q	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T02:42:33-0400	2026-05-30T02:48:54-0400
+9osr	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T02:59:49-0400	2026-05-30T03:05:43-0400
+9p4c	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T03:11:34-0400	2026-05-30T03:16:54-0400
+9ptm	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T03:23:30-0400	2026-05-30T03:29:43-0400
+9pzv	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T03:35:00-0400	2026-05-30T03:40:38-0400
+9rm2	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T03:46:40-0400	2026-05-30T03:52:30-0400
+9uaa	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T03:58:50-0400	2026-05-30T04:04:31-0400
+9uxd	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T04:04:35-0400	2026-05-30T04:10:12-0400
+9z3q	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T04:16:14-0400	2026-05-30T04:22:16-0400

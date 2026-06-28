@@ -239,6 +239,82 @@ Gate:
 - If embedding distance is flat with respect to H-CDR3 distance, diagnose the
   model before optimizing generation.
 
+Status on 2026-06-27:
+
+- Completed full embedding-sensitivity analysis as Slurm job `32100`.
+- Output:
+  `/project/liulab/jg1920/conffusion/phase14_20260627_analysis/full`.
+- Result note:
+  `notes/aim1-phase1-4-embedding-sensitivity-results.md`.
+- Interpretation note:
+  `notes/aim1-phase1-4-mca-diversity-awareness-interpretation.md`.
+- Main interpretation: local H-CDR3 residue embeddings show a weak positive
+  relationship to H-CDR3 structural distance, but the full H/L embedding is
+  essentially flat. K=32 to K=64 CDR-aware subsets preserve the average
+  embedding well, but the embedding-preservation gains over random are modest.
+  This argues for a downstream retrieval test or a model/readout diagnostic
+  before claiming task-preserving conformer compression.
+- Completed richer MCA readout audit as Slurm job `32194`.
+- Output:
+  `/project/liulab/jg1920/conffusion/phase14_20260627_readout_audit/full`.
+- Result note:
+  `notes/aim1-phase1-4-readout-audit-results.md`.
+- Main interpretation: H-CDR3 structural signal is more visible in flattened
+  local H-CDR3 residue embeddings than in mean-pooled CDR or full H/L
+  embeddings. The full H/L global mean remains essentially flat. This supports
+  a pooling/readout bottleneck hypothesis and makes global mean embedding
+  preservation too weak as a standalone endpoint.
+
+## Phase 1.4 Interpretation: MCA Diversity Awareness
+
+The embedding-sensitivity result should not be interpreted as "MCA is broken"
+or "Gaeun's conformers are useless." It should be interpreted as a readout
+warning:
+
+> The copied PH/AF3 ensemble contains real CDR structural diversity, but the
+> current frozen global MCA H/L mean-like readout only weakly sees that
+> diversity.
+
+This makes diversity awareness relevant to MCA, but in a specific way. The goal
+is not to make the model sensitive to every perturbation. The goal is to
+preserve CDR- and paratope-relevant ensemble information while ignoring
+framework jitter, duplicate density, conformer order, and PH/AF3 sampling
+artifacts.
+
+Evidence from the codebase:
+
+- MCA carries an explicit conformer axis in `mca_repr`.
+- MCA produces `pair_repr` and layer-wise conformer weights.
+- The outer-product module can compute conformer attention weights.
+- Several practical readouts still use arithmetic mean pooling over conformers
+  or residues.
+- The Phase 1.4 diagnostic itself tested mostly mean-pooled global and CDR
+  vectors.
+
+Therefore, the next question is where CDR signal disappears:
+
+1. PH/AF3 teacher ensemble;
+2. MCA encoder;
+3. conformer pooling/readout;
+4. retrieval head or antigen endpoint.
+
+Recommended next diagnostics:
+
+- compare full, random K, first-K, H-CDR3 k-center, all-CDR k-center,
+  one-conformer repeat, and duplicate-heavy controls on retrieval;
+- audit CDR-only per-residue embeddings, `final_pair_repr`, CDR/CDR pair
+  subblocks, layer-wise conformer weights, attention pooling, and mean+variance
+  readouts;
+- test a small CDR/paratope-aware pooling or adapter before retraining the full
+  model;
+- only consider a diversity-preserving training objective if richer readouts
+  and retrieval remain insensitive.
+
+Current working hypothesis:
+
+> The bottleneck may be pooling/readout or training objective rather than
+> conformer generation itself.
+
 ## Part D: Run Structural CDR Coreset Curves
 
 This can proceed in parallel with embedding-source auditing because it is
@@ -271,6 +347,17 @@ Initial interpretation from Phase 1.3:
   mean-nearest frame-aligned H-CDR3 distance.
 - K=64 improves coverage further, especially with greedy k-center.
 - Light-chain CDRs saturate faster and should not drive the primary budget.
+
+Status on 2026-06-27:
+
+- Completed structural CDR coreset run as Slurm job `32190` on `ragonliu1`.
+- Output:
+  `/external/liulab/jg1920/conffusion/aim1_phase1_4_cdr_coresets_20260627`.
+- Result note:
+  `notes/aim1-phase1-4-cdr-coreset-results.md`.
+- Main interpretation: CDR-aware k-center selection is most useful at K=32 to
+  K=64. K=8 is too aggressive for reliable H-CDR3 coverage. High-H-CDR3-motion
+  targets likely need adaptive K.
 
 Deliverable:
 
@@ -381,12 +468,14 @@ Next:
 
 Meaning:
 
-- The ensemble may be structurally diverse but downstream-invisible.
+- The ensemble may be structurally diverse but invisible to the tested global
+  embedding readout.
 
 Next:
 
-- inspect model inputs and pooling;
-- test per-residue embeddings or attention rather than only pooled embeddings;
+- inspect model inputs, pooling, pair representations, and conformer weights;
+- test per-residue CDR embeddings, attention pooling, and retrieval rather than
+  only pooled embeddings;
 - ask whether training objectives encourage conformer sensitivity;
 - pause generation-cost optimization claims.
 
@@ -426,17 +515,22 @@ Next:
 
 ## Immediate Work Order
 
-1. Build `target_strata.tsv` from Phase 1.3 CDR summaries.
-2. Audit the MCA/ConFormer checkpoint and embedding extraction path.
-3. Run a tiny embedding smoke test on 2-3 targets.
-4. Run a 30-target low/medium/high H-CDR3 embedding-sensitivity pilot.
-5. In parallel, generate CDR-aware coreset manifests for K=8/16/32/64.
-6. Use pilot results to decide whether Aim 2 compression is justified.
-7. Repeat on strict-300 only after conformers and endpoint metadata are ready.
+1. Hand off retrieval preservation to Phase 1.5:
+   `docs/aim1-phase1-5-retrieval-preservation-plan.md`.
+2. Materialize K=32/K=64 CDR coreset manifests from the completed structural
+   run when Phase 1.5a needs condition manifests.
+3. Run retrieval preservation once the checkpoint, antigen bank, and leakage
+   controls are frozen.
+4. If retrieval is flat but local CDR readouts remain sensitive, prototype
+   CDR/paratope-aware pooling or a small adapter on frozen MCA features.
+5. If all readouts and retrieval stay flat, treat diversity-aware model
+   training as a stronger hypothesis than further generation optimization.
+6. Repeat on strict-300 only after conformers and endpoint metadata are ready.
 
 ## Decisions Or Inputs Needed
 
-- Which MCA/ConFormer checkpoint is the correct one for current evaluation?
+- Exact path/hash for the June 19 `1000 conformer` checkpoint that Gaeun
+  confirmed is correct.
 - Which script should be treated as the canonical embedding extractor?
 - Does the model consume individual conformers, sets of conformers, or
   aggregated conformer features?
@@ -453,3 +547,6 @@ Recommendation:
   metadata are ready.
 - Do not start diffusion or generative distillation until embedding sensitivity
   and CDR-aware coreset baselines are known.
+- After the completed rich readout audit, prioritize retrieval preservation and
+  CDR/paratope-aware readout tests over more generic embedding-preservation
+  metrics.

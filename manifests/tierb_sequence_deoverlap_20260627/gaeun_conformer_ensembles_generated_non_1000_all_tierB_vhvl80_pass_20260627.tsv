@@ -1,0 +1,101 @@
+target_id	latest_stage_observed	has_any_generated_output	has_prothunt_output	has_af3_inputs	has_af3_results	has_filtered_af3_models	prothunt_output_dir_count	af3_input_json_count	af3_template_cif_count	af3_result_dir_count	filtered_child_dir_count	filtered_child_file_count	filtered_cif_file_count	filtered_pdb_file_count	filtered_json_file_count	prothunt_roots	prothunt_conf_gen_results_child_dir_count	prothunt_conf_gen_results_child_file_count	prothunt_dataset_root_child_dir_count	prothunt_dataset_root_child_file_count	overlaps_1000_train	overlaps_1000_test	overlaps_1000_all	overlaps_1000_trained_ids	first_seen_mtime_iso	latest_seen_mtime_iso	tierb_has_sequence	tierb_pass_vhvl80	tierb_fail_reason	max_vhvl_identity_to_1000_all	nearest_vhvl_target_1000_all	max_vh_identity_to_1000_all	nearest_vh_target_1000_all	max_vl_identity_to_1000_all	nearest_vl_target_1000_all
+2dd8	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T07:16:57-0400	2026-06-24T15:37:48-0400	True	True		0.785088	8fi9	0.844262	5ggt	0.934579	1adq
+2qsc	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T09:57:49-0400	2026-05-28T10:05:35-0400	True	True		0.774892	7bel	0.734375	3bn9	0.879630	7bel
+2ybr	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-28T10:26:32-0400	2026-06-25T19:35:37-0400	True	True		0.781250	7kn7	0.784483	5d70	0.850467	5ggt
+3bgf	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-22T04:20:03-0400	2026-06-25T04:56:36-0400	True	True		0.750000	4ki5	0.785124	3bsz	0.915888	4ki5
+4ris	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T14:31:09-0400	2026-05-28T14:37:40-0400	True	True		0.750000	8z6q	0.888889	7lm9	0.963964	7d6i
+5cez	af3_results	True	False	True	True			100	100	1											False	False	False	False	2026-06-24T19:25:42-0400	2026-06-25T14:22:18-0400	True	True		0.693617	4tvp	0.787879	4yk4	0.660194	4tvp
+5kvg	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-28T16:43:26-0400	2026-06-24T15:32:02-0400	True	True		0.788288	7wp8	0.735537	2a6i	0.915888	5en2
+5wna	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T17:18:18-0400	2026-05-28T17:23:47-0400	True	True		0.745690	6o24	0.725806	1w72	0.915094	5ggt
+6aq7	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T17:29:51-0400	2026-05-28T17:35:51-0400	True	True		0.690987	9bdh	0.714286	1kb5	0.738739	1i9r
+6iuv	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T18:05:16-0400	2026-05-28T18:11:16-0400	True	True		0.776371	5a3i	0.728000	7lm9	0.919643	9bt5
+6l62	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T18:52:44-0400	2026-05-28T18:58:47-0400	True	True		0.716157	9crv	0.852459	1ynt	0.878505	9crv
+6o3j	af3_results	True	False	True	True			100	100	44											False	False	False	False	2026-06-25T15:51:42-0400	2026-06-25T23:37:25-0400	True	True		0.740426	1tzg	0.677165	1tzg	0.861111	5gmq
+6oc3	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-22T23:05:25-0400	2026-06-26T02:53:44-0400	True	True		0.793991	2jix	0.761905	2jix	0.878505	1hez
+6phd	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T08:47:18-0400	2026-06-26T06:09:02-0400	True	True		0.722222	1w72	0.778626	1q1j	0.859813	9cqa
+6u2f	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T01:38:05-0400	2026-06-26T11:06:32-0400	True	True		0.757576	5en2	0.758065	1fpt	0.869159	5en2
+6udk	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T16:02:04-0400	2026-06-26T13:17:30-0400	True	True		0.613445	7coe	0.553846	7k8x	0.722222	7ch5
+6urm	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T01:24:55-0400	2026-06-26T14:57:46-0400	True	True		0.733624	9kef	0.786885	3ixt	0.814815	7rxi
+6w05	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T01:13:05-0400	2026-06-26T18:12:57-0400	True	True		0.799127	7yvg	0.837398	6w00	0.887850	9goy
+6wiz	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T02:45:07-0400	2026-06-26T19:58:06-0400	True	True		0.708861	9mqd	0.858268	3h0t	0.863636	9bj3
+6xq0	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T01:29:37-0400	2026-06-06T21:49:42-0400	True	True		0.755274	5ug0	0.713178	5ug0	0.879630	7kn7
+6xy2	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T00:41:29-0400	2026-06-19T08:57:38-0400	True	True		0.792208	1bvk	0.782258	2jix	0.850467	9pwn
+7bua	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T03:06:00-0400	2026-05-24T09:13:35-0400	True	True		0.769874	4hg4	0.750000	9aug	0.925234	4hg4
+7cbp	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T04:27:05-0400	2026-06-27T03:03:52-0400	True	True		0.784483	6o24	0.811475	3gjf	0.842593	5ggt
+7cwt	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T06:28:06-0400	2026-06-27T09:47:56-0400	True	True		0.767241	1h0d	0.805085	4ojf	0.788991	6b3m
+7cyh	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T06:17:06-0400	2026-06-27T11:26:18-0400	True	True		0.771552	1h0d	0.806723	4ojf	0.788991	6b3m
+7czt	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-19T06:30:59-0400	2026-05-24T16:31:15-0400	True	True		0.736170	6pzw	0.933333	8f0i	0.586207	6nip
+7dnk	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T20:51:49-0400	2026-05-28T20:57:27-0400	True	True		0.746725	2v17	0.855932	4zpt	0.878505	1jhl
+7dq7	af3_results	True	False	True	True			89	89	89											False	False	False	False	2026-06-23T08:40:58-0400	2026-06-27T17:18:44-0400	True	True		0.794760	3bky	0.780488	2vxt	0.933962	3bky
+7e5s	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T09:14:44-0400	2026-06-27T19:08:16-0400	True	True		0.760870	3gbn	0.739496	1iqd	0.945455	7cm4
+7ey5	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T20:57:30-0400	2026-05-28T21:03:44-0400	True	True		0.771552	5dum	0.758333	9cpu	0.935185	9goy
+7jie	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T12:17:52-0400	2026-06-26T13:47:14-0400	True	True		0.783333	6wxl	0.812500	4xak	0.946429	5a3i
+7kde	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T17:34:01-0400	2026-06-26T21:18:04-0400	True	True		0.711207	6orp	0.671875	2jix	0.724771	6orp
+7luc	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T14:22:52-0400	2026-06-26T03:46:28-0400	True	True		0.799145	9c0u	0.762295	9c0u	0.857143	9b2c
+7lwd	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T14:46:43-0400	2026-06-26T05:35:28-0400	True	True		0.779221	1afv	0.800000	9ghi	0.891892	1afv
+7m6h	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T17:57:12-0400	2026-06-26T09:43:35-0400	True	True		0.792373	3whe	0.825397	7czy	0.954955	8siq
+7mmo	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T01:51:15-0400	2026-06-19T10:17:53-0400	True	True		0.725664	9dez	0.811475	9kef	0.900901	7czw
+7mzi	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T04:17:05-0400	2026-06-19T11:00:32-0400	True	True		0.788546	4ttd	0.868852	9pwn	0.827273	3lzf
+7n3c	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T21:49:08-0400	2026-05-28T21:54:28-0400	True	True		0.781116	5dum	0.801587	9cpu	0.943925	5ggt
+7nd4	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T21:20:17-0400	2026-06-26T20:31:48-0400	True	True		0.780591	6pzy	0.795276	4yk4	0.809091	4fqj
+7pry	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T13:36:47-0400	2026-06-18T06:15:46-0400	True	True		0.792208	3hi1	0.849206	6pze	0.888889	4dgy
+7ps4	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-25T10:50:10-0400	2026-06-27T01:54:25-0400	True	True		0.754237	2b0s	0.856000	9cpu	0.935780	6pzy
+7ps7	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T14:53:51-0400	2026-06-19T14:56:34-0400	True	True		0.737991	4xnm	0.880952	6pze	0.775701	3go1
+7qtj	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T18:40:02-0400	2026-06-17T20:27:20-0400	True	True		0.775862	7ley	0.800000	1w72	0.879630	7bz5
+7qtk	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T21:54:51-0400	2026-05-28T22:00:53-0400	True	True		0.775862	7ley	0.800000	1w72	0.879630	7bz5
+7r8o	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-20T22:59:11-0400	2026-06-27T05:34:51-0400	True	True		0.675105	6lxj	0.875000	7wtf	0.631579	7rkv
+7rxj	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T21:58:03-0400	2026-06-18T04:32:18-0400	True	True		0.743478	1w72	0.813008	8dww	0.830189	4xnm
+7rxl	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-20T22:41:30-0400	2026-06-19T15:36:16-0400	True	True		0.778261	7rxi	0.875000	3s36	0.896226	4xnm
+7sfv	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-23T16:56:51-0400	2026-06-27T11:18:08-0400	True	True		0.757576	9cqa	0.795082	7ufn	0.887850	9cqa
+7sfw	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T02:56:34-0400	2026-06-12T01:07:02-0400	True	True		0.757576	9cqa	0.795082	7ufn	0.887850	9cqa
+7t7b	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T01:26:37-0400	2026-06-08T02:23:01-0400	True	True		0.770213	7wrv	0.736434	5h30	0.915888	7czu
+7tas	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-21T01:57:26-0400	2026-06-27T17:49:19-0400	True	True		0.782979	4gxu	0.775000	6rp8	0.935185	6pzy
+7tp3	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T06:58:13-0400	2026-06-08T20:47:49-0400	True	True		0.795745	8gb8	0.789062	8gb8	0.851852	9bj3
+7tp4	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T07:41:03-0400	2026-06-10T03:22:08-0400	True	True		0.793103	8gou	0.806452	8gb8	0.872727	9aug
+7txt	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T09:05:14-0400	2026-06-17T12:10:23-0400	True	True		0.792208	1afv	0.816667	9ghi	0.900901	1afv
+7txz	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T11:13:33-0400	2026-06-19T16:30:25-0400	True	True		0.775862	1h0d	0.888889	1sm3	0.918919	1h0d
+7u8e	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-21T11:18:12-0400	2026-06-18T13:00:28-0400	True	True		0.668050	7czw	0.796875	7czw	0.552632	6pzy
+7upk	af3_results	True	False	True	True			60	60	60											False	False	False	False	2026-05-22T00:12:21-0400	2026-06-17T18:54:10-0400	True	True		0.799107	2bdn	0.816667	9ghi	0.934579	2bdn
+7ur4	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T00:55:41-0400	2026-06-08T09:44:01-0400	True	True		0.722944	8khd	0.801653	8f0i	0.867925	8khd
+7uzc	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T03:14:53-0400	2026-06-17T23:52:00-0400	True	True		0.794872	3qum	0.837398	9cq7	0.927928	3bsz
+7v27	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T04:36:08-0400	2026-06-20T00:49:28-0400	True	True		0.722467	9dez	0.791667	3ixt	0.891892	7czw
+7v64	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T04:53:23-0400	2026-06-19T17:11:55-0400	True	True		0.746667	1sm3	0.719008	4ene	0.954128	2vir
+7vgs	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T05:58:37-0400	2026-06-08T13:04:32-0400	True	True		0.781116	9bdh	0.836066	3rhw	0.918919	6orq
+7vyr	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-06-21T01:55:19-0400	2026-06-27T09:37:52-0400	True	True		0.763158	8fi9	0.811475	5ggt	0.869159	1adq
+7we9	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T12:01:44-0400	2026-06-17T17:37:13-0400	True	True		0.782979	4fqj	0.783333	6d2p	0.882883	6jep
+7wee	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T15:26:42-0400	2026-06-18T03:09:53-0400	True	True		0.691304	7czp	0.786885	9kef	0.864865	7czw
+7wef	af3_results	True	False	True	True			100	100	100											False	False	False	False	2026-05-22T14:48:16-0400	2026-06-19T17:30:43-0400	True	True		0.782979	4fqj	0.783333	6d2p	0.882883	6jep
+7x94	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	2121			False	False	False	False	2026-06-18T11:59:53-0400	2026-06-24T16:24:09-0400	True	True		0.694915	8khd	0.779528	7wb5	0.908257	8khd
+7x95	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1817			False	False	False	False	2026-06-18T12:09:49-0400	2026-06-24T16:22:33-0400	True	True		0.787234	4gxu	0.837398	8h7z	0.872727	3lzf
+7x96	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1963			False	False	False	False	2026-06-18T12:27:35-0400	2026-06-24T16:23:59-0400	True	True		0.772926	7k9z	0.836066	7czy	0.880734	7czu
+8kdi	af3_results	True	False	False	True					100											False	False	False	False	2026-05-28T22:11:51-0400	2026-05-28T22:17:33-0400	True	True		0.781116	3j8z	0.762295	1fbi	0.876106	3j8z
+9ccw	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T17:07:33-0400	2026-06-19T22:22:32-0400	True	True		0.795652	9mx1	0.836066	9md2	0.887850	4gms
+9ctu	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T18:09:57-0400	2026-05-29T18:15:30-0400	True	True		0.781116	9bdh	0.836066	3rhw	0.918919	6orq
+9ggp	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T20:07:01-0400	2026-05-29T20:13:11-0400	True	True		0.742358	1oak	0.834711	7x2i	0.952830	2adf
+9h6u	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1946			False	False	False	False	2026-06-18T21:36:50-0400	2026-06-24T17:11:46-0400	True	True		0.773109	3whe	0.812500	7wrv	0.945946	3h42
+9hk1	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T20:52:56-0400	2026-05-29T20:57:59-0400	True	True		0.787879	7xjf	0.766667	6xkr	0.870370	7yv1
+9ind	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T21:04:19-0400	2026-05-29T21:09:44-0400	True	True		0.758772	5ggt	0.823529	6xkr	0.831776	2eiz
+9iw2	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T21:15:59-0400	2026-05-29T21:21:50-0400	True	True		0.792208	3hi1	0.842975	7yv1	0.898148	4dgy
+9jbq	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T21:38:42-0400	2026-05-29T21:49:46-0400	True	True		0.783186	9ima	0.800000	6xkr	0.867925	3ixt
+9jie	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T21:56:04-0400	2026-05-29T22:01:16-0400	True	True		0.787500	7swp	0.834646	7czu	0.936364	7cm4
+9jif	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T22:01:19-0400	2026-06-04T20:00:48-0400	True	True		0.787500	7swp	0.834646	7czu	0.936364	7cm4
+9jij	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T22:07:12-0400	2026-06-04T20:01:11-0400	True	True		0.727660	3gbn	0.696000	5tzt	0.881818	7cm4
+9jim	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T22:12:59-0400	2026-06-19T22:53:37-0400	True	True		0.771429	6jep	0.783582	6jep	0.954545	7cm4
+9jq6	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T22:36:09-0400	2026-06-04T20:20:20-0400	True	True		0.780172	6orq	0.826446	4ene	0.918919	1qnz
+9jzq	af3_results	True	False	False	True					100											False	False	False	False	2026-05-29T22:59:38-0400	2026-05-29T23:05:09-0400	True	True		0.794760	9kef	0.770492	9kef	0.907407	1adq
+9kve	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-29T23:23:27-0400	2026-06-04T20:27:53-0400	True	True		0.779167	7swp	0.804688	7dpm	0.810811	7swp
+9md6	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-30T00:28:00-0400	2026-06-06T17:25:05-0400	True	True		0.764192	5i73	0.795082	9cq7	0.925234	9mx1
+9mer	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T00:45:36-0400	2026-05-30T00:51:19-0400	True	True		0.793991	2jix	0.761905	2jix	0.878505	1hez
+9mic	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	2250			False	False	False	False	2026-06-20T10:50:55-0400	2026-06-24T18:04:50-0400	True	True		0.799107	7k9z	0.850000	6d2p	0.885714	8gau
+9mif	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-30T01:02:45-0400	2026-06-04T20:32:52-0400	True	True		0.796460	7k9z	0.878049	5if0	0.906542	7czu
+9ml1	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T01:08:20-0400	2026-05-30T01:14:12-0400	True	True		0.779661	3lzf	0.761905	3lzf	0.900901	8siq
+9ml4	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	1856			False	False	False	False	2026-06-19T01:03:29-0400	2026-06-24T18:11:25-0400	True	True		0.780172	8gzz	0.811475	8gzz	0.761062	9f1i
+9mla	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T01:19:57-0400	2026-05-30T01:25:38-0400	True	True		0.750000	3e8u	0.831933	1tet	0.927928	3bsz
+9mq7	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T01:31:37-0400	2026-05-30T01:37:40-0400	True	True		0.788546	2eks	0.816667	8vul	0.925234	7djz
+9n0d	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T02:01:08-0400	2026-05-30T02:07:37-0400	True	True		0.782222	3ab0	0.775000	1him	0.915094	1rvf
+9nph	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T02:25:07-0400	2026-05-30T02:30:40-0400	True	True		0.706897	1w72	0.771654	7czu	0.830189	4xnm
+9o4n	filtered_af3_models	True	False	True	True	True		100	100	100	100	0	0	0	0						False	False	False	False	2026-05-30T02:30:43-0400	2026-06-04T20:41:42-0400	True	True		0.786611	6wxl	0.808000	9dpc	0.919643	9bt5
+9o4o	filtered_af3_models	True	True	True	True	True	1	100	100	100	100	0	0	0	0	prothunt_conf_gen_results	0	2128			False	False	False	False	2026-06-19T01:38:42-0400	2026-06-24T18:26:36-0400	True	True		0.763485	4o58	0.724409	9dpc	0.963303	6pzy
+9p4c	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T03:11:34-0400	2026-05-30T03:16:54-0400	True	True		0.750000	9f1i	0.776786	8yhz	0.796460	9f1i
+9pzv	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T03:35:00-0400	2026-05-30T03:40:38-0400	True	True		0.719828	5kvd	0.805085	1ct8	0.815789	1pkq
+9rm2	af3_results	True	False	False	True					100											False	False	False	False	2026-05-30T03:46:40-0400	2026-05-30T03:52:30-0400	True	True		0.795652	9mqd	0.801653	7kqe	0.925926	6o2c

@@ -320,6 +320,33 @@ def chain_region_defs(target_id: str, chain_role: str, sequence: str, scheme: st
     return regions
 
 
+def numbered_variable_sequence(sequence: str, chain_role: str, scheme: str) -> str:
+    chain = Chain(sequence, scheme=scheme, cdr_definition=scheme, use_anarcii=True)
+    if chain_role == "heavy" and chain.chain_type != "H":
+        raise ValueError(f"expected heavy chain but AbNumber assigned {chain.chain_type}")
+    if chain_role == "light" and chain.chain_type not in {"K", "L"}:
+        raise ValueError(f"expected light chain but AbNumber assigned {chain.chain_type}")
+    return "".join(aa for _pos, aa in chain)
+
+
+def normalize_target_meta(target_id: str, target_meta: dict[str, str], scheme: str) -> dict[str, str]:
+    """Use numbered variable-domain sequence for CDR mapping.
+
+    Some SAbDab-style entries include scFv linkers or construct residues in the
+    stored H/L sequence. AbNumber correctly ignores those residues for CDR
+    numbering; assignment and coordinate mapping need to use the same numbered
+    variable-domain sequence or the residue indices drift.
+    """
+    out = dict(target_meta)
+    out["raw_vh_seq"] = target_meta.get("vh_seq", "")
+    out["raw_vl_seq"] = target_meta.get("vl_seq", "")
+    out["vh_seq"] = numbered_variable_sequence(out["raw_vh_seq"], "heavy", scheme)
+    out["vl_seq"] = numbered_variable_sequence(out["raw_vl_seq"], "light", scheme)
+    out["vh_seq_normalized_for_numbering"] = "true"
+    out["vl_seq_normalized_for_numbering"] = "true"
+    return out
+
+
 def target_region_defs(target_id: str, target_meta: dict[str, str], scheme: str) -> dict[str, RegionDef]:
     regions = {}
     for region in chain_region_defs(target_id, "heavy", target_meta.get("vh_seq", ""), scheme):
@@ -908,6 +935,7 @@ def main() -> None:
 
     numbering_rows = []
     mapping_rows = []
+    assignment_rows = []
     diversity_rows = []
     saturation_rows = []
     per_residue_rows = []
@@ -916,14 +944,30 @@ def main() -> None:
     mapped_ok_count = 0
 
     for target_index, target_id in enumerate(target_order, start=1):
-        target_regions = target_region_defs(target_id, target_meta[target_id], args.scheme)
+        normalized_meta = normalize_target_meta(target_id, target_meta[target_id], args.scheme)
+        target_regions = target_region_defs(target_id, normalized_meta, args.scheme)
         region_groups = make_region_groups(target_id, target_regions)
-        numbering_rows.extend(numbering_rows_for_target(target_id, target_meta[target_id], args.scheme))
+        numbering_rows.extend(numbering_rows_for_target(target_id, normalized_meta, args.scheme))
 
-        assigned = [parse_and_assign(dataset_root, row, target_meta[target_id]) for row in by_target[target_id]]
+        assigned = [parse_and_assign(dataset_root, row, normalized_meta) for row in by_target[target_id]]
+        for conf in assigned:
+            assignment_rows.append(
+                {
+                    "target_id": target_id,
+                    "pick_rank": conf.pick_rank,
+                    "copied_relative_path": conf.copied_relative_path,
+                    "parse_ok": str(conf.parse_ok).lower(),
+                    "assignment_ok": str(conf.assignment_ok).lower(),
+                    "error": conf.error,
+                    "heavy_chain": conf.heavy_chain,
+                    "light_chain": conf.light_chain,
+                    "heavy_score": conf.heavy_score,
+                    "light_score": conf.light_score,
+                }
+            )
         ok_assigned = [conf for conf in assigned if conf.assignment_ok]
         assignment_ok_count += len(ok_assigned)
-        mapped = [map_conformer_regions(conf, target_meta[target_id], target_regions, region_groups) for conf in ok_assigned]
+        mapped = [map_conformer_regions(conf, normalized_meta, target_regions, region_groups) for conf in ok_assigned]
         mapped_ok = [
             conf
             for conf in mapped
@@ -1085,6 +1129,22 @@ def main() -> None:
     aggregate_rows = aggregate_saturation_rows(saturation_rows)
 
     write_tsv(
+        out_dir / "chain_assignment_summary.tsv",
+        assignment_rows,
+        [
+            "target_id",
+            "pick_rank",
+            "copied_relative_path",
+            "parse_ok",
+            "assignment_ok",
+            "error",
+            "heavy_chain",
+            "light_chain",
+            "heavy_score",
+            "light_score",
+        ],
+    )
+    write_tsv(
         out_dir / "cdr_numbering_assignments.tsv",
         numbering_rows,
         [
@@ -1222,6 +1282,14 @@ def main() -> None:
         "targets_analyzed": len(target_order),
         "conformers_in_manifest": sum(len(rows) for rows in by_target.values()),
         "assignment_ok_conformers": assignment_ok_count,
+        "assignment_failed_conformers": len(assignment_rows) - assignment_ok_count,
+        "targets_with_assignment_failures": len(
+            {
+                row["target_id"]
+                for row in assignment_rows
+                if str(row["assignment_ok"]).lower() != "true"
+            }
+        ),
         "mapped_ok_conformers": mapped_ok_count,
         "targets_with_cdr_distances": len({row["target_id"] for row in diversity_rows if row["metric"] == "frame_aligned_ca"}),
         "role_score_threshold": ROLE_SCORE_THRESHOLD,

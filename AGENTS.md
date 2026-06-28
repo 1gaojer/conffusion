@@ -30,6 +30,24 @@ efficient antibody conformer ensemble modeling.
 - Downstream antigen retrieval claims require leakage-aware baselines and hard
   negatives.
 
+## Biological Payload And Log Hygiene
+
+- Treat sequence manifests, conformer manifests, antigen/source tables,
+  embedding-export metadata, PDB/mmCIF-derived tables, and generated target
+  records as biological payloads when they contain or can expose raw sequences.
+- Do not print raw `vh_seq`, `vl_seq`, antigen sequences, FASTA/MSA records,
+  full JSON records, or residue dumps in stdout/stderr, notes, or chat unless
+  Jerry explicitly asks and the direct payload is necessary.
+- Default diagnostics should use safe summaries: target IDs, row counts,
+  source labels, split labels, sequence lengths, conformer counts, missing-field
+  names, checksums, metrics, and paths.
+- When adding analysis scripts or Slurm wrappers, make logs path/count/metric
+  oriented. Write sequence-bearing outputs to files and refer to those files by
+  path plus checksum or manifest row ID.
+- Avoid `cat`, broad `head`, broad `tail`, broad `grep`, `sed`, or unfiltered
+  `jq` on sequence-bearing files. Prefer scripts that explicitly drop sequence
+  columns before printing.
+
 ## Documentation Style
 
 - Keep docs concise but specific.

@@ -18,6 +18,7 @@ outputs/
 artifacts/
 scratch/
 tmp/
+figure_inputs/
 *.pdb
 *.cif
 *.bcif
